@@ -1,1 +1,1 @@
-# inventori
+# inventory
