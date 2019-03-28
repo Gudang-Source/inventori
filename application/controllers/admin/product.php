@@ -872,12 +872,16 @@ class Product extends Admin_Controller
     public function get_subcategory_by_category($id=null){
         $this->tbl_subcategory('subcategory_id');
         $subcategory = $this->global_model->get_by(array('category_id' => $id), false);
+        
         if ($subcategory) {
             foreach ($subcategory as $v_subcategory) {
                 $HTML.="<option value='" . $v_subcategory->subcategory_id . "'>" . $v_subcategory->subcategory_name . "</option>";
             }
         }
-        echo $HTML;
+
+        echo $HTML; exit();
+
+
     }
 
 }
