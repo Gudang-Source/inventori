@@ -4,14 +4,6 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-/*
- *	@author : CodesLab
- *  @support: support@codeslab.net
- *	date	: 05 June, 2015
- *	Easy Inventory
- *	http://www.codeslab.net
- *  version: 1.0
- */
 class Product extends Admin_Controller
 {
     public function __construct()
@@ -317,7 +309,7 @@ class Product extends Admin_Controller
         $product_id = $this->global_model->save($product_info, $id);
 
         if(empty($id)) {
-            $product_code['product_code'] = $this->input->post('product_code').$product_id;
+            $product_code['product_code'] = $this->input->post('kode_produk');
             $this->global_model->save($product_code, $product_id);
             $this->set_barcode($product_code['product_code'],$product_id);
         }
@@ -495,18 +487,38 @@ class Product extends Admin_Controller
     private function set_barcode($code, $id)
     {
 
-        //load library
-        $this->load->library('zend');
-        //load in folder Zend
-        $this->zend->load('Zend/Barcode');
+        // //load library
+        // $this->load->library('zend');
+        // //load in folder Zend
+        // $this->zend->load('Zend/Barcode');
 
-        //generate barcode
-        $file = Zend_Barcode::draw('code128', 'image', array('text' => $code), array());
+        // //generate barcode
+        // $file = Zend_Barcode::draw('code128', 'image', array('text' => base_url()."admin/order/add_cart_item_by_barcode_scanner/".$code), array());
 
-        imagejpeg($file, "img/barcode/{$code}.jpg");
+        // imagejpeg($file, "img/barcode/{$code}.jpg");
 
-        $data['barcode'] = "img/barcode/{$code}.jpg";
+        $data['barcode'] = "img/qrcode/{$code}.png";
         $data['barcode_path'] = getcwd().'/'.$data['barcode'];
+        $this->load->library('ciqrcode'); //pemanggilan library QR CODE
+
+        $config['cacheable']    = true; //boolean, the default is true
+        $config['cachedir']     = './application/cache/'; //string, the default is application/cache/
+        $config['errorlog']     = './application/cache/'; //string, the default is application/logs/
+        $config['imagedir']     = './img/qrcode/'; //direktori penyimpanan qr code
+        $config['quality']      = true; //boolean, the default is true
+        $config['size']         = '1024'; //interger, the default is 1024
+        $config['black']        = array(224,255,255); // array, default is array(255,255,255)
+        $config['white']        = array(70,130,180); // array, default is array(0,0,0)
+        $this->ciqrcode->initialize($config);
+
+        $image_name=$code.'.png'; //buat name dari qr code sesuai dengan nim
+
+        $params['data'] = base_url()."admin/order/add_cart_item_by_qrcode_scanner/".$code;
+        $params['level'] = 'H'; //H=High
+        $params['size'] = 10;
+        $params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
+        $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+
 
         $this->tbl_product('product_id');
         $this->global_model->save($data, $id);

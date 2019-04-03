@@ -59,23 +59,21 @@
                                 <div class="tab-pane <?php if(empty($tab)){ echo 'active';} ?>" id="general">
 
                                     <div class="box-body">
-
-
                                         <!-- /.Product Code -->
                                         <?php if (!empty($product_info->product_id)) {?>
                                         <div class="form-group">
-                                            <label>Product Code</label>
+                                            <label>Product Code <span class="required">*</span></label>
                                             <input type="text"  placeholder="Product Code"
-                                                   value="<?php echo $product_info->product_code ?>"
-                                                   class="form-control" disabled>
+                                                   value=""
+                                                   class="form-control" name="kode_produk">
                                         </div>
                                         <?php }else { ?>
 
                                             <div class="form-group">
-                                                <label>Product Code</label>
+                                                <label>Product Code <span class="required">*</span></label>
                                                 <input type="text"  placeholder="Product Code"
-                                                       value="<?php echo $code ?>"
-                                                       class="form-control" disabled>
+                                                       value=""
+                                                       class="form-control" name="kode_produk">
                                             </div>
 
                                         <?php } ?>
