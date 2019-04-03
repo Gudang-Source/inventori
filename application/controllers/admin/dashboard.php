@@ -4,14 +4,6 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-/*
- *	@author : CodesLab
- *  @support: support@codeslab.net
- *	date	: 05 June, 2015
- *	Easy Inventory
- *	http://www.codeslab.net
- *  version: 1.0
- */
 
 class Dashboard extends Admin_Controller
 {
@@ -58,7 +50,7 @@ class Dashboard extends Admin_Controller
         $data['year'] = date('Y');
 
         $data['yearly_sales_report'] = $this->get_yearly_sales_report($data['year']);  // get yearly report
-        $data['title'] = 'Easy Inventory'; // title
+        $data['title'] = 'Inventory TNI'; // title
         $data['subview'] = $this->load->view('admin/dashboard', $data, true); // sub view
         $this->load->view('admin/_layout_main', $data); // main page
     }

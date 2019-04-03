@@ -4,14 +4,6 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-/*
- *	@author : CodesLab
- *  @support: support@codeslab.net
- *	date	: 05 June, 2015
- *	Easy Inventory
- *	http://www.codeslab.net
- *  version: 1.0
- */
 
 class Login extends MY_Controller
 {
@@ -24,7 +16,7 @@ class Login extends MY_Controller
     {
 
 
-        $data['title'] = 'User Login';
+        //$data['title'] = 'User Login';
         $data['subview'] = $this->load->view('login', $data, true);
         $this->load->view('login', $data);
 

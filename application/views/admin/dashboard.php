@@ -5,7 +5,7 @@ if(!empty($info->currency))
     $currency = $info->currency ;
 }else
 {
-    $currency = '$';
+    $currency = 'Rp';
 }
 ?>
 
@@ -37,7 +37,7 @@ if(!empty($info->currency))
                             <div class="description-block margin-bottom">
                                 <div class="sparkbar pad" data-color="#fff"><canvas height="30" width="34" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
                                 <h5 class="description-header"><?php echo $currency .' '. number_format($total->selling_price - $total->buying_price - $discount->discount_amount ,2)  ?></h5>
-                                <span class="description-text">TOTAL REVENUE</span>
+                                <span class="description-text">TOTAL PENDAPATAN</span>
                             </div><!-- /.description-block -->
                             <div class="description-block margin-bottom">
                                 <div class="sparkbar pad" data-color="#fff"><canvas height="30" width="34" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
@@ -46,8 +46,8 @@ if(!empty($info->currency))
                             </div><!-- /.description-block -->
                             <div class="description-block">
                                 <div class="sparkbar pad" data-color="#fff"><canvas height="30" width="34" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
-                                <h5 class="description-header"><?php echo $currency .' '. number_format($total->product_tax , 2)  ?></h5>
-                                <span class="description-text">TOTAL TAX</span>
+                                <h5 class="description-header"><?php //echo $currency .' '. number_format($total->product_tax , 2)  ?></h5>
+                                <!-- <span class="description-text">TOTAL TAX</span> -->
                             </div><!-- /.description-block -->
                         </div>
                     </div><!-- /.col -->
@@ -65,7 +65,7 @@ if(!empty($info->currency))
                 <div class="info-box">
                     <span class="info-box-icon bg-aqua"><i class="glyphicon glyphicon-qrcode"></i></span>
                     <div class="info-box-content box-color">
-                        <span class="info-box-text">TOTAL PRODUCT</span>
+                        <span class="info-box-text">TOTAL BARANG</span>
                         <span class="info-box-number"><?php echo $total_product ?></span>
                         <a href="<?php echo base_url() ?>admin/product/manage_product" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                     </div><!-- /.info-box-content -->
@@ -77,7 +77,7 @@ if(!empty($info->currency))
             <div class="info-box">
                 <span class="info-box-icon bg-purple"><i class="glyphicon glyphicon-shopping-cart"></i></span>
                 <div class="info-box-content box-color">
-                    <span class="info-box-text">TOTAL ORDER</span>
+                    <span class="info-box-text">TOTAL PERMINTAAN</span>
                     <span class="info-box-number"><?php echo $total_order ?></span>
                     <a href="<?php echo base_url() ?>admin/order/manage_order" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div><!-- /.info-box-content -->
@@ -87,7 +87,7 @@ if(!empty($info->currency))
             <div class="info-box">
                 <span class="info-box-icon bg-green"><i class="glyphicon glyphicon-list-alt"></i></span>
                 <div class="info-box-content box-color">
-                    <span class="info-box-text">TOTAL INVOICE</span>
+                    <span class="info-box-text">TOTAL STRUK</span>
                     <span class="info-box-number"><?php echo $total_invoice ?></span>
                     <a href="<?php echo base_url() ?>admin/order/manage_invoice" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div><!-- /.info-box-content -->
@@ -113,7 +113,7 @@ if(!empty($info->currency))
         <!-- TABLE: LATEST ORDERS -->
         <div class="box">
             <div class="box-header box-header-background with-border">
-                <h3 class="box-title">Latest Orders</h3>
+                <h3 class="box-title">Permintaan Terbaru</h3>
 
             </div><!-- /.box-header -->
             <div class="box-body">
@@ -168,7 +168,7 @@ if(!empty($info->currency))
         <!-- PRODUCT LIST -->
         <div class="box box-primary">
             <div class="box-header box-header-background with-border">
-                <h3 class="box-title">Recently Added Products</h3>
+                <h3 class="box-title">Produk Terbaru</h3>
                           </div><!-- /.box-header -->
             <div class="box-body">
                 <ul class="products-list product-list-in-box">

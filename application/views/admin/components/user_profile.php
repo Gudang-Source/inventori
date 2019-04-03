@@ -5,12 +5,12 @@ if(!empty($info->currency))
     $currency = $info->currency ;
 }else
 {
-    $currency = '$';
+    $currency = 'Rp';
 }
 ?>
         <header class="main-header">
         <!-- Logo -->
-        <a href="<?php echo base_url(); ?>" class="logo"><b>Easy</b>Inventory</a>
+        <a href="<?php echo base_url(); ?>" class="logo"><b></b>Inventory</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->

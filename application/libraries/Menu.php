@@ -29,10 +29,10 @@ class Menu
                                         FROM tbl_user_role
                                         INNER JOIN tbl_menu
                                         ON tbl_user_role.menu_id=tbl_menu.menu_id
-                                        WHERE tbl_user_role.employee_login_id=$employee_login_id
+                                        WHERE tbl_user_role.employee_login_id=$employee_login_id and flag = 1
                                         ORDER BY sort;");
         } else { // get all menu for admin
-           $user_menu =  mysql_query('SELECT menu_id, label, link, icon, parent FROM tbl_menu ORDER BY sort');
+           $user_menu =  mysql_query('SELECT menu_id, label, link, icon, parent FROM tbl_menu where flag = 1 ORDER BY sort');
         }
 
         // Create a multidimensional array to conatin a list of items and parents

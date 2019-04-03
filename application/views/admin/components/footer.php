@@ -1,7 +1,7 @@
  
 <footer class="main-footer">
       
-        <strong>Copyright &copy; <?php echo date("Y") ?> <a href="http://codeslab.net">codeslab.net</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; <?php echo date("Y") ?> <a href="#">Mabes TNI</a>.</strong> All rights reserved.
       </footer>
       
  </div><!-- ./wrapper -->
