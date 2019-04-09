@@ -43,10 +43,10 @@
                             <tr>
                                 <th class="col-sm-1 active" style="width: 21px"><input type="checkbox" class="checkbox-inline" id="parent_present" /></th>
                                 <th class="active">Image</th>
-                                <th class="active">Code</th>
-                                <th class="active">Product Name</th>
-                                <th class="active">Product Category</th>
-                                <th class="active">Stock Available</th>
+                                <th class="active">Kode Bekal</th>
+                                <th class="active">Nama Bekal</th>
+                                <th class="active">Kategori Barang</th>
+                                <th class="active">Siap Pakai</th>
                                 <th class="active">Status</th>
                                 <th class="active">Action</th>
 
@@ -69,7 +69,7 @@
                                     <td class="vertical-td"><?php echo $v_product->category_name .' > '. $v_product->subcategory_name?></td>
                                     <td class="vertical-td">
                                         <?php
-                                            if($v_product->notify_quantity >= $v_product->product_quantity)
+                                            if($v_product->jumlah_barang >= $v_product->product_quantity)
                                             { ?>
                                                 <span class="label label-warning"><?php echo $v_product->product_quantity ?></span>
                                         <?php } else { ?>
