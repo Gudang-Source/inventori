@@ -172,7 +172,7 @@
                                     <?php echo $this->view('admin/order/cart/cart_summary.php') ?>
                                 </div>
 
-                            </div>
+                            </div> 
                             <!-- /.box -->
 
                     </div>
