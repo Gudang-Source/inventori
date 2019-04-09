@@ -179,33 +179,33 @@ if(!empty($info->address)){
                             <?php $counter ++?>
                         <?php endforeach; ?>
                         </tbody>
-                        <tfoot>
+                        <!-- <tfoot>
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">SUBTOTAL</td>
-                            <td><?php echo number_format($order_info->sub_total,2) ?></td>
+                            <td><?php //echo number_format($order_info->sub_total,2) ?></td>
                         </tr>
 
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">Tax</td>
-                            <td><?php echo number_format($order_info->total_tax,2) ?></td>
+                            <td><?php //echo number_format($order_info->total_tax,2) ?></td>
                         </tr>
 
-                        <?php if($order_info->discount):?>
+                        <?php //if($order_info->discount):?>
                             <tr>
                                 <td colspan="2"></td>
                                 <td colspan="2">Discount Amount</td>
-                                <td><?php echo number_format($order_info->discount_amount,2) ?></td>
+                                <td><?php //echo number_format($order_info->discount_amount,2) ?></td>
                             </tr>
-                        <?php endif; ?>
+                        <?php //endif; ?>
 
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">GRAND TOTAL</td>
-                            <td><?php echo $currency.' '.number_format($order_info->grand_total,2) ?></td>
+                            <td><?php //echo $currency.' '.number_format($order_info->grand_total,2) ?></td>
                         </tr>
-                        </tfoot>
+                        </tfoot> -->
                     </table>
 
                 </main>
