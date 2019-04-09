@@ -43,9 +43,10 @@
                 <form class="login100-form validate-form" role="form" action="<?php echo base_url() ?>login" method="post">
    
 
-                    <span class="login100-form-title p-b-43">
+                    <!-- <span class="login100-form-title p-b-43">
                         Inventory
-                    </span >
+                    </span > -->
+                    <img style="display: block;  width: 100%;" src="asset/img/logo.png">
                     <span class="login100-form-title p-t-23">
                     <?php echo validation_errors(); ?>
                     <?php echo $this->session->flashdata('error'); ?>
