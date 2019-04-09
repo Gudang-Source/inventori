@@ -9,7 +9,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add Customer</h3>
+                        <h3 class="box-title ">Tambah Satkai</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -27,32 +27,48 @@
 
                             <div class="box-body">
 
-                                <!-- /.customer Code -->
-                                <?php if (!empty($customer->customer_code)) {?>
-                                    <div class="form-group">
-                                        <label>Customer Id</label>
-                                        <input type="text"
-                                               value="<?php echo $customer->customer_code ?>"
-                                               class="form-control" disabled>
-                                    </div>
-                                <?php }else { ?>
-
-                                    <div class="form-group">
-                                        <label>Customer Id<span class="required">*</span></label>
-                                        <input type="text"
-                                               value="<?php echo $code ?>"
-                                               class="form-control" disabled>
-                                    </div>
-
-                                <?php } ?>
+                                
 
                                 <!-- /.customer Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Customer Name <span class="required">*</span></label>
-                                    <input type="text" name="customer_name" placeholder="Customer Name"
+                                    <label for="exampleInputEmail1">Nama <span class="required">*</span></label>
+                                    <input type="text" name="nama" placeholder="Nama"
                                            value="<?php
-                                           if (!empty($customer->customer_name)) {
-                                               echo $customer->customer_name;
+                                           if (!empty($customer->nama)) {
+                                               echo $customer->nama;
+                                           }
+                                           ?>"
+                                           class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Pangkat <span class="required">*</span></label>
+                                    <input type="text" name="pangkat" placeholder="Pangkat"
+                                           value="<?php
+                                           if (!empty($customer->pangkat)) {
+                                               echo $customer->pangkat;
+                                           }
+                                           ?>"
+                                           class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">NRP <span class="required">*</span></label>
+                                    <input type="text" name="nrp" placeholder="NRP"
+                                           value="<?php
+                                           if (!empty($customer->nrp)) {
+                                               echo $customer->nrp;
+                                           }
+                                           ?>"
+                                           class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Satkai <span class="required">*</span></label>
+                                    <input type="text" name="satkai" placeholder="Satkai"
+                                           value="<?php
+                                           if (!empty($customer->satkai)) {
+                                               echo $customer->satkai;
                                            }
                                            ?>"
                                            class="form-control">
@@ -84,17 +100,7 @@
                                     <div style=" color: #E13300" id="phone_result"></div>
                                 </div>
 
-                                <!-- /.Discount -->
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Discount %</label>
-                                    <input type="text" placeholder="Discount" name="discount"
-                                           value="<?php
-                                           if (!empty($customer->discount)) {
-                                               echo $customer->discount;
-                                           }
-                                           ?>"
-                                           class="form-control">
-                                </div>
+                                
 
                                 <!-- /.Address -->
                                 <div class="form-group">
@@ -126,7 +132,7 @@
                     } ?>" id="customer_id">
 
                     <div class="box-footer">
-                        <button type="submit" id="customer_btn" class="btn bg-navy col-md-offset-3" type="submit">Add Supplier
+                        <button type="submit" id="customer_btn" class="btn bg-navy col-md-offset-3" type="submit">Tambah
                         </button>
                     </div>
                 </form>
