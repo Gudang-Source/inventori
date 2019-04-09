@@ -21,9 +21,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="product-barcode">
-                        <img src="<?php echo base_url() . $product->barcode ?>" />
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -37,121 +35,22 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td class="col-sm-3">Product Code</td>
+                    <td class="col-sm-3">Kode Bekal</td>
                     <td><?php echo $product->product_code ?></td>
                 </tr>
                 <tr>
-                    <td class="col-sm-3 ">Product Name</td>
+                    <td class="col-sm-3 ">Nama Bekal</td>
                     <td class=""><?php echo $product->product_name ?></td>
                 </tr>
                 <tr>
-                    <td class="col-sm-3">Product Note</td>
+                    <td class="col-sm-3">Catatan Produk</td>
                     <td><?php echo $product->product_note ?></td>
                 </tr>
                 <tr>
-                    <td class="col-sm-3 ">Product Category</td>
+                    <td class="col-sm-3 ">Kategori Bekal</td>
                     <td class=""><?php echo $product->category_name ?></td>
                 </tr>
-                <tr>
-                    <th class="active" colspan="2" >Product General Price</th>
-                </tr>
-                <tr>
-                    <td class="col-sm-3">Buying Price</td>
-                    <td class=""><?php echo $product->buying_price ?></td>
-                </tr>
-                <tr>
-                    <td class="col-sm-3">Selling Price</td>
-                    <td><?php echo $product->selling_price ?></td>
-                </tr>
-
-                <tr>
-                    <th class="active" colspan="2">Special Offer</th>
-                </tr>
-                <tr>
-                    <td class="col-sm-3">Offer Start Date</td>
-                    <td><?php echo $product->start_date ?></td>
-                </tr>
-                <tr>
-                    <td class="col-sm-3">Offer End Date</td>
-                    <td><?php echo $product->end_date ?></td>
-                </tr>
-                <tr>
-                    <td class="col-sm-3">Offer Price</td>
-                    <td><?php echo $product->offer_price ?></td>
-                </tr>
-
-                <tr>
-                    <th class="active" colspan="2">Tier Price</th>
-                </tr>
-
-                <tr>
-                    <td class="no-border" colspan="2">
-
-                        <table class="table table-bordered nowrap">
-                            <thead>
-                            <tr>
-                                <th>
-                                    Quantity Above
-                                </th>
-                                <th>
-                                    Price
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php foreach($tier_price as $v_tier_price){ ?>
-                            <tr>
-                                <td><?php echo $v_tier_price->quantity_above?></td>
-                                <td><?php echo $v_tier_price->tier_price?></td>
-                            </tr>
-                            <?php } ?>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th class="active" colspan="2">Attribute</th>
-                </tr>
-
-                <tr>
-                    <td class="no-border" colspan="2">
-
-                        <table class="table table-bordered nowrap">
-                            <thead>
-                            <tr>
-                                <th>
-                                    Attribute Label
-                                </th>
-                                <th>
-                                    Value
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php foreach($attribute as $v_attribute){ ?>
-                                <tr>
-                                    <td><?php echo $v_attribute->attribute_name?></td>
-                                    <td><?php echo $v_attribute->attribute_value?></td>
-                                </tr>
-                            <?php } ?>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th class="active" colspan="2">Product Tag</th>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <?php foreach($product_tags as $v_tag){
-                            echo '<span class="label label-default">'.$v_tag->tag .'</span> &nbsp;&nbsp;';
-                        }?>
-
-
-                    </td>
-                </tr>
+                
 
 
                 </tbody>

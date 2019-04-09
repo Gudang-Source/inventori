@@ -27,48 +27,23 @@
 
                             <div class="box-body">
 
-                                
+                                <!-- /.customer Code -->
+                               <div class="form-group">
+                                  <label class="control-label col-sm-2">
+                                    Nama
+                                  </label>
+                                  <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="nama" value="<?=isset($customer['nama'])? $customer['nama'] : ""?>">
+                                  </div>
+                                </div>
 
                                 <!-- /.customer Name -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Nama <span class="required">*</span></label>
-                                    <input type="text" name="nama" placeholder="Nama"
+                                    <label for="exampleInputEmail1">Nrp <span class="required">*</span></label>
+                                    <input type="text" name="customer_name" placeholder="Customer Name"
                                            value="<?php
-                                           if (!empty($customer->nama)) {
-                                               echo $customer->nama;
-                                           }
-                                           ?>"
-                                           class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Pangkat <span class="required">*</span></label>
-                                    <input type="text" name="pangkat" placeholder="Pangkat"
-                                           value="<?php
-                                           if (!empty($customer->pangkat)) {
-                                               echo $customer->pangkat;
-                                           }
-                                           ?>"
-                                           class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">NRP <span class="required">*</span></label>
-                                    <input type="text" name="nrp" placeholder="NRP"
-                                           value="<?php
-                                           if (!empty($customer->nrp)) {
-                                               echo $customer->nrp;
-                                           }
-                                           ?>"
-                                           class="form-control">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Satkai <span class="required">*</span></label>
-                                    <input type="text" name="satkai" placeholder="Satkai"
-                                           value="<?php
-                                           if (!empty($customer->satkai)) {
-                                               echo $customer->satkai;
+                                           if (!empty($customer->customer_name)) {
+                                               echo $customer->customer_name;
                                            }
                                            ?>"
                                            class="form-control">
@@ -76,7 +51,7 @@
 
                                 <!-- /.Company Email -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email <span
+                                    <label for="exampleInputEmail1">Pangkat <span
                                             class="required">*</span></label>
                                     <input type="text" placeholder="Email" name="email"
                                            value="<?php
@@ -89,7 +64,7 @@
 
                                 <!-- /.Phone -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Phone</label>
+                                    <label for="exampleInputEmail1">Korps</label>
                                     <input type="text" placeholder="Phone" name="phone" onchange="check_phone(this.value)"
                                            value="<?php
                                            if (!empty($customer->phone)) {
@@ -100,11 +75,21 @@
                                     <div style=" color: #E13300" id="phone_result"></div>
                                 </div>
 
-                                
+                                <!-- /.Discount -->
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Jabatan</label>
+                                    <input type="text" placeholder="Discount" name="discount"
+                                           value="<?php
+                                           if (!empty($customer->discount)) {
+                                               echo $customer->discount;
+                                           }
+                                           ?>"
+                                           class="form-control">
+                                </div>
 
                                 <!-- /.Address -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Address <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">Kesatuan <span class="required">*</span></label>
                                     <textarea name="address" class="form-control autogrow" id="ck_editor"
                                               placeholder="Address"><?php
                                         if (!empty($customer->address)) {
@@ -132,7 +117,7 @@
                     } ?>" id="customer_id">
 
                     <div class="box-footer">
-                        <button type="submit" id="customer_btn" class="btn bg-navy col-md-offset-3" type="submit">Tambah
+                        <button type="submit" id="customer_btn" class="btn bg-navy col-md-offset-3" type="submit">Add Supplier
                         </button>
                     </div>
                 </form>

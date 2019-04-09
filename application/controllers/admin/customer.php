@@ -56,7 +56,10 @@ class Customer extends Admin_Controller
     public function save_customer($id = null)
     {
         $data = $this->customer_model->array_from_post(array(
-            'customer_name',
+            'nama',
+            'pangkat',
+            'nrp',
+            'satkai',
             'email',
             'phone',
             'address',

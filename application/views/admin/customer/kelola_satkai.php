@@ -20,14 +20,12 @@
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead ><!-- Table head -->
                             <tr>
-                                <th class="active">No</th>
-                                <th class="active">Nama</th>
-                                <th class="active">Pangkat</th>
-                                <th class="active">NRP</th>
-                                <th class="active">Satkai</th>
+                                <th class="active">Sl</th>
+                                <th class="active">Customer Code</th>
+                                <th class="active">Customer Name</th>
                                 <th class="active">Email</th>
                                 <th class="active">Phone</th>
-                                <th class="active">Address</th>
+                                <th class="active">Discount</th>
                                 <th class="active">Action</th>
 
                             </tr>
@@ -39,13 +37,11 @@
                                     <td class="vertical-td">
                                         <?php echo  $counter ?>
                                     </td>
-                                    <td class="vertical-td"><?php echo $v_customer->nama ?></td>
-                                    <td class="vertical-td"><?php echo $v_customer->pangkat ?></td>
-                                    <td class="vertical-td"><?php echo $v_customer->nrp ?></td>
-                                    <td class="vertical-td"><?php echo $v_customer->satkai ?></td>
+                                    <td class="vertical-td"><?php echo $v_customer->customer_code ?></td>
+                                    <td class="vertical-td"><?php echo $v_customer->customer_name ?></td>
                                     <td class="vertical-td"><?php echo $v_customer->email ?></td>
                                     <td class="vertical-td"><?php echo $v_customer->phone ?></td>
-                                    <td class="vertical-td"><?php echo $v_customer->address ?></td>
+                                    <td class="vertical-td"><?php echo $v_customer->discount ?> %</td>
 
                                     <td class="vertical-td">
                                         <?php echo btn_edit('admin/customer/add_customer/' . $v_customer->customer_id); ?>
