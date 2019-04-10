@@ -67,6 +67,7 @@ if(!empty($info->currency))
                                         }
                                         ?>
                                     </td>
+                                    <td class="vertical-td">ORD-<?php echo $v_order->Sales_By ?></td>
                                     <!-- <td class="vertical-td"><?php //echo $currency .' '. number_format($v_order->grand_total,2)  ?></td> -->
                                     <td class="vertical-td"><?php echo $v_order->sales_person ?></td>
 
