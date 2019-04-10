@@ -10,7 +10,7 @@
 
             <div class="box box-primary ">
                 <div class="box-header box-header-background with-border">
-                        <h3 class="box-title ">Manage Customer</h3>
+                        <h3 class="box-title ">Manage Satkai</h3>
                 </div>
 
 
