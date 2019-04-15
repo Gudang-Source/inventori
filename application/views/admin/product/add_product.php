@@ -31,8 +31,7 @@
 
 
                     <br/><br/>
-
-
+                    
                     <div class="row">
 
                         <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
@@ -43,24 +42,15 @@
 
                                     <div class="box-body">
                                         <!-- /.Product Code -->
-                                        <?php if (!empty($product_info->product_id)) {?>
                                         <div class="form-group">
                                             <label>Kode Bekal <span class="required">*</span></label>
-                                            <input type="text"  placeholder="Kode Bekal"
-                                                   value=""
-                                                   class="form-control" name="kode_produk">
+                                            <input type="text" placeholder="Kode Bekal"
+                                                   class="form-control" name="kode_produk" value="<?php
+                                                   if (!empty($product_info)) {
+                                                       echo $product_info->product_code;
+                                                   }
+                                                   ?>">
                                         </div>
-                                        <?php }else { ?>
-
-                                            <div class="form-group">
-                                                <label>Kode Bekal <span class="required">*</span></label>
-                                                <input type="text"  placeholder="Kode Bekal"
-                                                       value=""
-                                                       class="form-control" name="kode_produk">
-                                            </div>
-
-                                        <?php } ?>
-
                                         <!-- /.Product Name -->
                                         <div class="form-group">
                                             <label>Nama Bekal <span class="required">*</span></label>
@@ -86,9 +76,9 @@
 
                                         <!-- /.Category -->
                                         <div class="form-group">
-                                            <label>Product Category</label>
+                                            <label>Kategori Bekal</label>
                                             <select name="category_id" class="form-control col-sm-5" id="category" onchange="get_category(this.value)">
-                                                <option value="">Select Product Category</option>
+                                                <option value="">Pilih Kategori Bekal</option>
                                                 <?php if (!empty($category)): ?>
                                                     <?php foreach ($category as $v_category) : ?>
                                                         <option value="<?php echo $v_category->category_id; ?>"
@@ -106,9 +96,9 @@
 
                                         <!-- /.Sub Category -->
                                         <div class="form-group">
-                                            <label>Subcategory<span class="required">*</span></label>
+                                            <label>Sub Kategori<span class="required">*</span></label>
                                             <select name="subcategory_id" class="form-control col-sm-5" id="subcategory">
-                                                <option value="">Product Subcategory</option>
+                                                <option value="">Sub Kategori</option>
                                                 <?php if (!empty($subcategory)): ?>
                                                     <?php foreach ($subcategory as $v_subcategogy) : ?>
                                                         <option value="<?php echo $v_subcategogy->subcategory_id; ?>"
@@ -126,7 +116,7 @@
                                         
                                             <!-- /.Buying Price -->
                                             <div class="form-group">
-                                                <label>Jumlah Barang </label>
+                                                <label>Jumlah Bekal </label>
                                                 <input type="text" id="product_quantity" name="product_quantity" placeholder="Jumlah Barang"
                                                        value="<?php
                                                        if (!empty($inventory)) {
@@ -138,7 +128,7 @@
 
                                             <!-- /.Selling Price -->
                                             <div class="form-group">
-                                                <label>Barang Rusak </label>
+                                                <label>Bekal Rusak </label>
                                                 <input type="text" name="notify_quantity" placeholder="Barang Rusak"
                                                        value="<?php
                                                        if (!empty($inventory)) {
@@ -154,7 +144,7 @@
 
                                         <!-- /.Product Image -->
                                         <div class="form-group">
-                                            <label>Product Image</label>
+                                            <label>Gambar Bekal</label>
                                         </div>
                                         <div class="form-group">
                                             <!-- hidden  old_path when update  -->
@@ -236,7 +226,7 @@
                     </div>
 
                     <div class="box-footer">
-                        <button type="submit"  id="submit" class="btn bg-navy col-md-offset-3" type="submit">Save Product
+                        <button type="submit"  id="submit" class="btn bg-navy col-md-offset-3" type="submit">Simpan Bekal
                         </button>
                     </div>
 

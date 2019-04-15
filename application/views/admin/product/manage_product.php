@@ -12,20 +12,20 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
 
-                        <h3 class="box-title ">Manage Product</h3>
+                        <h3 class="box-title ">Kelola Bekal</h3>
 
 
 
                     <div class="box-tools">
                         <div class="input-group ">
                             <select class="form-control pull-right" name="action" style="width: 150px;" required>
-                                <option value="">Select..</option>
-                                <option value="1">Active</option>
-                                <option value="2">Deactivate</option>
-                                <option value="3">Delete</option>
+                                <option value="">Pilih..</option>
+                                <option value="1">Aktiv</option>
+                                <option value="2">Tidak Aktiv</option>
+                                <option value="3">Hapus</option>
                             </select>
                                     <span class="input-group-btn">
-                                      <button type="submit" class="btn btn-default" type="button">Action</button>
+                                      <button type="submit" class="btn btn-default" type="button">Aksi</button>
                                     </span>
                         </div>
                     </div>
@@ -42,13 +42,13 @@
                             <thead ><!-- Table head -->
                             <tr>
                                 <th class="col-sm-1 active" style="width: 21px"><input type="checkbox" class="checkbox-inline" id="parent_present" /></th>
-                                <th class="active">Image</th>
+                                <th class="active">Gambar</th>
                                 <th class="active">Kode Bekal</th>
                                 <th class="active">Nama Bekal</th>
                                 <th class="active">Kategori Barang</th>
                                 <th class="active">Siap Pakai</th>
                                 <th class="active">Status</th>
-                                <th class="active">Action</th>
+                                <th class="active">Aksi</th>
 
                             </tr>
                             </thead><!-- / Table head -->
@@ -100,7 +100,7 @@
                             ?><!--get all sub category if not this empty-->
                             <?php else : ?> <!--get error message if this empty-->
                                 <td colspan="8">
-                                    <strong>There is no data to display</strong>
+                                    <strong>Tidak ada data</strong>
                                 </td><!--/ get error message if this empty-->
                             <?php endif; ?>
                             </tbody><!-- / Table body -->
