@@ -484,45 +484,45 @@ class Product extends Admin_Controller
     }
 
     /*** Barcode Generate ***/
-    private function set_barcode($code, $id)
-    {
+    // private function set_barcode($code, $id)
+    // {
 
-        // //load library
-        // $this->load->library('zend');
-        // //load in folder Zend
-        // $this->zend->load('Zend/Barcode');
+    //     // //load library
+    //     // $this->load->library('zend');
+    //     // //load in folder Zend
+    //     // $this->zend->load('Zend/Barcode');
 
-        // //generate barcode
-        // $file = Zend_Barcode::draw('code128', 'image', array('text' => base_url()."admin/order/add_cart_item_by_barcode_scanner/".$code), array());
+    //     // //generate barcode
+    //     // $file = Zend_Barcode::draw('code128', 'image', array('text' => base_url()."admin/order/add_cart_item_by_barcode_scanner/".$code), array());
 
-        // imagejpeg($file, "img/barcode/{$code}.jpg");
+    //     // imagejpeg($file, "img/barcode/{$code}.jpg");
 
-        $data['barcode'] = "img/qrcode/{$code}.png";
-        $data['barcode_path'] = getcwd().'/'.$data['barcode'];
-        $this->load->library('ciqrcode'); //pemanggilan library QR CODE
+    //     $data['barcode'] = "img/qrcode/{$code}.png";
+    //     $data['barcode_path'] = getcwd().'/'.$data['barcode'];
+    //     $this->load->library('ciqrcode'); //pemanggilan library QR CODE
 
-        $config['cacheable']    = true; //boolean, the default is true
-        $config['cachedir']     = './application/cache/'; //string, the default is application/cache/
-        $config['errorlog']     = './application/cache/'; //string, the default is application/logs/
-        $config['imagedir']     = './img/qrcode/'; //direktori penyimpanan qr code
-        $config['quality']      = true; //boolean, the default is true
-        $config['size']         = '1024'; //interger, the default is 1024
-        $config['black']        = array(224,255,255); // array, default is array(255,255,255)
-        $config['white']        = array(70,130,180); // array, default is array(0,0,0)
-        $this->ciqrcode->initialize($config);
+    //     $config['cacheable']    = true; //boolean, the default is true
+    //     $config['cachedir']     = './application/cache/'; //string, the default is application/cache/
+    //     $config['errorlog']     = './application/cache/'; //string, the default is application/logs/
+    //     $config['imagedir']     = './img/qrcode/'; //direktori penyimpanan qr code
+    //     $config['quality']      = true; //boolean, the default is true
+    //     $config['size']         = '1024'; //interger, the default is 1024
+    //     $config['black']        = array(224,255,255); // array, default is array(255,255,255)
+    //     $config['white']        = array(70,130,180); // array, default is array(0,0,0)
+    //     $this->ciqrcode->initialize($config);
 
-        $image_name=$code.'.png'; //buat name dari qr code sesuai dengan nim
+    //     $image_name=$code.'.png'; //buat name dari qr code sesuai dengan nim
 
-        $params['data'] = base_url()."admin/order/add_cart_item_by_qrcode_scanner/".$code;
-        $params['level'] = 'H'; //H=High
-        $params['size'] = 10;
-        $params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
-        $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+    //     $params['data'] = base_url()."admin/order/add_cart_item_by_qrcode_scanner/".$code;
+    //     $params['level'] = 'H'; //H=High
+    //     $params['size'] = 10;
+    //     $params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
+    //     $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 
 
-        $this->tbl_product('product_id');
-        $this->global_model->save($data, $id);
-    }
+    //     $this->tbl_product('product_id');
+    //     $this->global_model->save($data, $id);
+    // }
 
     /*** Manage Product ***/
     public function manage_product()
@@ -671,7 +671,7 @@ class Product extends Admin_Controller
             //update
             $this->global_model->save($data,$id );
         }
-        $this->message->custom_success_msg('admin/product/manage_product', 'Your Product Active Successfully!');
+        $this->message->custom_success_msg('admin/product/manage_product', 'Bekal Aktiv!');
     }
 
     /*** product deactivate ***/
@@ -685,7 +685,7 @@ class Product extends Admin_Controller
             //update
             $this->global_model->save($data,$id );
         }
-        $this->message->custom_success_msg('admin/product/manage_product', 'Your Product Deactivated Successfully!');
+        $this->message->custom_success_msg('admin/product/manage_product', 'Bekal tidak Aktive');
     }
 
     /*** Delete product***/
@@ -894,6 +894,25 @@ class Product extends Admin_Controller
         echo $HTML; exit();
 
 
+    }
+
+     private function set_barcode($code, $id){
+
+        //load library
+        $this->load->library('zend');
+        //load in folder Zend
+        $this->zend->load('Zend/Barcode');
+
+        //generate barcode
+        $file = Zend_Barcode::draw('code128', 'image', array('text' => $code), array());
+
+        imagejpeg($file, "img/barcode/{$code}.jpg");
+
+        $data['barcode'] = "img/barcode/{$code}.jpg";
+        $data['barcode_path'] = getcwd().'/'.$data['barcode'];
+
+        $this->tbl_product('product_id');
+        $this->global_model->save($data, $id);
     }
 
 }
