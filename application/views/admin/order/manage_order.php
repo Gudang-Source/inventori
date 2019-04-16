@@ -20,7 +20,7 @@ if(!empty($info->currency))
 
             <div class="box box-primary ">
                 <div class="box-header box-header-background with-border">
-                        <h3 class="box-title ">Manage Order</h3>
+                        <h3 class="box-title ">Kelola Permintaan Pesanan</h3>
                     <div class="box-tools">
                         <a onclick="print_invoice('printableArea')" class="btn btn-default">Print</a>
 
@@ -37,13 +37,13 @@ if(!empty($info->currency))
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead ><!-- Table head -->
                             <tr>
-                                <th class="active">Sl</th>
-                                <th class="active">Order No</th>
-                                <th class="active">Order Date</th>
-                                <th class="active">Order Status</th>
-                                <th class="active">Order Total</th>
-                                <th class="active">Sales By</th>
-                                <th class="active">Action</th>
+                                <th class="active">No</th>
+                                <th class="active">No Pesanan</th>
+                                <th class="active">Tanggal Pesanan</th>
+                                <th class="active">Status Pesanan</th>
+                                <th class="active">Total Pesanan</th>
+                                <th class="active">Diproses Oleh</th>
+                                <th class="active">Aksi</th>
 
                             </tr>
                             </thead><!-- / Table head -->

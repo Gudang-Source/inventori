@@ -15,7 +15,7 @@
 
         <div class="box box-primary">
             <div class="box-header box-header-background with-border">
-                <h3 class="box-title ">Place New Order</h3>
+                <h3 class="box-title ">Permintaan Baru</h3>
             </div>
             <div class="box-body">
 
@@ -25,16 +25,16 @@
 
                         <div class="box  box-warning">
                             <div class="box-header box-header-background-light with-border">
-                                <h3 class="box-title ">Select Product</h3>
+                                <h3 class="box-title ">Pilih Produk</h3>
                             </div>
 
 
                             <div class="box-body order-panel">
 
                                 <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                                    <li class="active"><a href="#product-list" data-toggle="tab">Shopping Cart</a>
+                                    <li class="active"><a href="#product-list" data-toggle="tab">Pemesanan</a>
                                     </li>
-                                    <li><a href="#search-product" data-toggle="tab">Search Product</a></li>
+                                    <li><a href="#search-product" data-toggle="tab">Cari Produk</a></li>
                                 </ul>
 
 
@@ -79,7 +79,7 @@
                                         <div class="row">
                                             <div class="col-md-3 col-md-offset-9" style="position: absolute; padding-top: 10px" >
                                                 <button type="submit" class="btn btn-block btn-social btn-bitbucket">
-                                                    <i class="glyphicon glyphicon-shopping-cart"></i> Add to Cart
+                                                    <i class="glyphicon glyphicon-shopping-cart"></i>Pemesanan
                                                 </button>
                                             </div>
                                         </div>
@@ -89,10 +89,10 @@
                                             <thead><!-- Table head -->
                                             <tr>
                                                 <th class="col-sm-1 active" style="width: 21px"><input type="checkbox" class="checkbox-inline" id="parent_present" /></th>
-                                                <th class="active">Barcode</th>
-                                                <th class="active">Product Name</th>
-                                                <th class="active">Inventory</th>
-                                                <th class="active col-md-1">Purchase</th>
+                                                <th class="active">Kode Bekal</th>
+                                                <th class="active">Bekal</th>
+                                                <th class="active">Siap Pakai</th>
+                                                <th class="active col-md-1">Pesan</th>
 
                                             </tr>
                                             </thead>
@@ -123,7 +123,7 @@
 
                                                             <input type="hidden" name="product_id"
                                                                    value="<?php echo $v_product->product_code ?>">
-                                                        <a href="<?php echo base_url()?>admin/order/add_cart_item/<?php echo $v_product->product_code ?>" data-original-title="Add to Cart" class="btn btn-primary btn-xs" title="" data-toggle="tooltip" data-placement="top">
+                                                        <a href="<?php echo base_url()?>admin/order/add_cart_item/<?php echo $v_product->product_code ?>" data-original-title="Tambah ke Pemesanan" class="btn btn-primary btn-xs" title="" data-toggle="tooltip" data-placement="top">
                                                             <i class="fa fa-shopping-cart"></i></a>
 
 
@@ -165,7 +165,7 @@
 
                             <div class="box">
                                 <div class="box-header with-border box-header-background">
-                                    <h3 class="box-title ">Order Summary</h3>
+                                    <h3 class="box-title ">Detail Pesanan</h3>
                                 </div>
 
                                 <div id="cart_summary">
@@ -260,10 +260,10 @@ if( !empty($cart_msg))
         // options
         <?php if($cart_msg == 'add'){ ?>
         icon: 'glyphicon glyphicon-ok-sign',
-        message: '  Product add to cart successfully!'
+        message: '  Produk berhasil ditambahkan ke Pemesanan!'
         <?php }else{ ?>
         icon: 'glyphicon glyphicon-ok-sign',
-        message: '  Delete from cart successfully!'
+        message: '  Berhasil menghapus dari Pemesanan!'
         <?php } ?>
     },{
         // settings

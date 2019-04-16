@@ -4,12 +4,12 @@
 <table class="table table-bordered table-hover">
     <thead ><!-- Table head -->
     <tr>
-        <th class="active">Sl</th>
-        <th class="active col-sm-6">Product</th>
-        <th class="active ">Qty</th>
-        <th class="active ">Unit Price</th>
-        <th class="active">Total</th>
-        <th class="active">Action</th>
+        <th class="active">No</th>
+        <th class="active col-sm-6">Bekal</th>
+        <th class="active ">Quantity</th>
+        <!-- <th class="active ">Harga</th>
+        <th class="active">Total</th> -->
+        <th class="active">Aksi</th>
 
     </tr>
     </thead><!-- / Table head -->
@@ -31,9 +31,9 @@
                 <input  type="text" name="qty" style="width: 50px" value="<?php echo $item['qty'] ?>" onblur ="order(this);" id="<?php echo 'qty'.$item['rowid'] ?>" class="form-control">
 
             </td>
-            <td>
+            <!-- <td>
 
-<!--                <input  type="text" name="price" value="--><?php //echo $item['price'] ?><!--"  onblur ="order(this);" id="--><?php //echo 'pri'.$item['rowid'] ?><!--" class="form-control">-->
+                <input  type="text" name="price" value="--><?php //echo $item['price'] ?><!--"  onblur ="order(this);" id="--><?php //echo 'pri'.$item['rowid'] ?><!--" class="form-control">
                 <div class="input-group">
                         <span class="input-group-addon">
                           <input type="checkbox" id="<?php echo 'opt'.$item['rowid'] ?>" onclick="return price_checkbox(this)" name="custom_price"
@@ -46,8 +46,8 @@
 
 
                 <input type="hidden" name="product_code" value="<?php echo $item['id']  ?>" id="<?php echo 'code'.$item['rowid'] ?>">
-            </td>
-            <td class="vertical-td"><?php echo number_format($item['subtotal'], 2, '.', ',')  ?></td>
+            </td> -->
+              <!-- <td class="vertical-td"><?php echo number_format($item['subtotal'], 2, '.', ',')  ?></td> -->
 
             <td class="vertical-td">
                 <?php echo btn_delete('admin/order/delete_cart_item/' . $item['rowid']); ?>
@@ -67,7 +67,7 @@
 
     <?php else : ?> <!--get error message if this empty-->
         <td colspan="6">
-            <strong>There is no record for display</strong>
+            <strong>Data pemesanan belum ada</strong>
         </td><!--/ get error message if this empty-->
     <?php endif; ?>
     </tbody><!-- / Table body -->

@@ -5,7 +5,7 @@ if(!empty($info->currency))
     $currency = $info->currency ;
 }else
 {
-    $currency = '$';
+    $currency = 'Rp';
 }
 ?>
 <!--Massage-->
@@ -20,7 +20,7 @@ if(!empty($info->currency))
 
             <div class="box box-primary ">
                 <div class="box-header box-header-background with-border">
-                        <h3 class="box-title ">Manage Invoice</h3>
+                        <h3 class="box-title ">Kelola Struk</h3>
                     <div class="box-tools">
                             <a onclick="print_invoice('printableArea')" class="btn btn-default">Print</a>
 
@@ -37,14 +37,14 @@ if(!empty($info->currency))
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead ><!-- Table head -->
                             <tr>
-                                <th class="active">Sl</th>
-                                <th class="active">Invoice No.</th>
-                                <th class="active">Order No.</th>
-                                <th class="active">Invoice Date</th>
-                                <th class="active">Customer</th>
-                                <th class="active">Payment Method</th>
-                                <th class="active">Order Total</th>
-                                <th class="active">Action</th>
+                                <th class="active">No</th>
+                                <th class="active">No  Struk</th>
+                                <th class="active">No Pesanan</th>
+                                <th class="active">Tanggal Struk</th>
+                                <th class="active">Pelanggan</th>
+                                <th class="active">Metode Pembayaran</th>
+                                <th class="active">Total Pemesanan</th>
+                                <th class="active">Aksi</th>
 
                             </tr>
                             </thead><!-- / Table head -->

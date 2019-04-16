@@ -6,7 +6,7 @@ if(!empty($info->currency))
     $currency = $info->currency ;
 }else
 {
-    $currency = '$';
+    $currency = 'Rp ';
 }
 ?>
 <div class="box-background">
@@ -16,7 +16,7 @@ if(!empty($info->currency))
 
 
                 <div class="form-group">
-                    <label class="col-sm-5 control-label">Order No.</label>
+                    <label class="col-sm-5 control-label">No Pesanan</label>
 
                     <div class="col-sm-7">
                         <input type="text" value="<?php echo $this->session->userdata('order_no'); ?>" disabled class="form-control ">
@@ -62,18 +62,18 @@ if(!empty($info->currency))
 
 <form method="post" action="<?php echo base_url()?>admin/order/save_order">
 
-        <div class="box-background" id="order">
-            <div class="box-body">
+       <!--  <div class="box-background" id="order"> -->
+            <!-- <div class="box-body"> -->
                 <div class="row">
 
                     <div class="col-md-12">
 
 
                        <div class="form-group">
-                            <label class="col-sm-5 control-label">Sub Tota</label>
+                            <!-- <label class="col-sm-5 control-label">Sub Tota</label> -->
 
                             <div class="col-sm-7">
-                                <input type="text" value="<?php
+                                <input type="hidden" value="<?php
                                 if(empty($cart)){
                                     echo '0.00';
                                 }else{ echo $this->cart->format_number($this->cart->total());  }
@@ -88,10 +88,10 @@ if(!empty($info->currency))
                         <?php endforeach; endif ?>
 
                         <div class="form-group">
-                            <label class="col-sm-5 control-label">Tax</label>
+                            <!-- <label class="col-sm-5 control-label">Tax</label> -->
 
                             <div class="col-sm-7">
-                                <input type="text" value="<?php
+                                <input type="hidden" value="<?php
                                 if(empty($cart)){
                                     echo '0.00';
                                 }else {
@@ -102,13 +102,13 @@ if(!empty($info->currency))
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-5 control-label">Discount</label>
+                            <!-- <label class="col-sm-5 control-label">Discount</label> -->
 
                             <div class="col-sm-7">
                                 <?php
                                   $discount = $this->session->userdata('discount')
                                 ?>
-                                <input type="text" value="<?php if(!empty($discount)) {echo number_format($discount, 0, '.', ',') ; }else{ echo '0'; }
+                                <input type="hidden" value="<?php if(!empty($discount)) {echo number_format($discount, 0, '.', ',') ; }else{ echo '0'; }
                                 ?> %" disabled class="form-control unite">
                             </div>
                         </div>
@@ -118,7 +118,7 @@ if(!empty($info->currency))
 
                             <div class="col-sm-7">
                                 <?php
-                                $cart_total = $this->cart->total();
+                                $cart_total = $this->cart->qty();
                                 $discount_amount = (($cart_total + $total_tax) * $discount ) /100;
                                 ?>
                                 <input type="text" value="<?php echo number_format($discount_amount, 2, '.', ',') ;
@@ -136,9 +136,9 @@ if(!empty($info->currency))
 
                 </div>
 
-            </div>
+            <!-- </div> -->
             <!-- /.box-body -->
-        </div>
+        <!-- </div> -->
 
 
 
@@ -146,7 +146,7 @@ if(!empty($info->currency))
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label class="col-sm-5 control-label" style="padding-top: 25px">Grand Total :</label>
+                        <label class="col-sm-5 control-label" style="padding-top: 25px">Total Barang :</label>
                             <?php $cart_total = $this->cart->total();
                             if(!empty($discount)){
                                 $grand_total = $cart_total + $total_tax - $discount_amount;
@@ -173,18 +173,18 @@ if(!empty($info->currency))
                 <div class="row">
                     <div class="col-md-12">
 
-                        <div class="form-group">
+                      <!--   <div  class="form-group">
                             <label class="col-sm-5 control-label">Payment Method</label>
 
                             <div class="col-sm-7">
-                                <select name="payment_method" class="form-control" id="order_payment_type">
+                                <select  name="payment_method" class="form-control" id="order_payment_type">
                                     <option value="cash">Cash Payment</option>
                                     <option value="cheque">Cheque Payment</option>
                                     <option value="card">Credit Card</option>
                                     <option value="pending">Pending Order</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="col-md-12" style="display: none" id="payment">
@@ -200,16 +200,16 @@ if(!empty($info->currency))
 
                     <div class="col-md-12 order-panel"  id="shipping">
                             <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                                <li class="active"><a href="#note" data-toggle="tab">Order Note</a>
+                                <li class="active"><a href="#note" data-toggle="tab">Catatan</a>
                                 </li>
-                                <li><a href="#shipping_address" data-toggle="tab">Shipping</a></li>
+                                <!-- <li><a href="#shipping_address" data-toggle="tab">Shipping</a></li> -->
                             </ul>
                         <div id="my-tab-content" class="tab-content">
 
                             <!-- ***************  Cart Tab Start ****************** -->
                                 <div class="tab-pane active" id="note">
                                     <div class="form-group">
-                                        <label>Order Note</label>
+                                        <label>Catatan</label>
                                         <textarea class="form-control" name="note" rows="3" placeholder="Enter ..." id="ck_editor"></textarea>
                                         <?php
                                         if(!empty($editor['ckeditor']))
@@ -235,7 +235,7 @@ if(!empty($info->currency))
         <div class="box-body">
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" id="btn_order" class="btn bg-navy btn-block " type="submit" <?php echo !empty($cart)?'':'disabled' ?>>Submit Order
+                    <button type="submit" id="btn_order" class="btn bg-navy btn-block " type="submit" <?php echo !empty($cart)?'':'disabled' ?>>Kirim Pesanan
                     </button>
                 </div>
             </div>
