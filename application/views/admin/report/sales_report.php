@@ -59,7 +59,7 @@ if(!empty($info->address)){
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Sales Report</h3>
+                        <h3 class="box-title ">Laporan Pengeluaran</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -75,7 +75,7 @@ if(!empty($info->address)){
 
 
                                     <div class="form-group">
-                                        <label class="control-label">Start Date<span class="required"> *</span></label>
+                                        <label class="control-label">Mulai Tanggal<span class="required"> *</span></label>
 
                                         <div class="input-group">
                                             <input type="text" value="" class="form-control datepicker" name="start_date" data-format="yyyy/mm/dd" required>
@@ -87,7 +87,7 @@ if(!empty($info->address)){
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label">End Date<span class="required"> *</span></label>
+                                        <label class="control-label">Sampai Tanggal<span class="required"> *</span></label>
                                         <div class="input-group">
                                             <input type="text" value="" class="form-control datepicker" name="end_date" data-format="yyyy/mm/dd" required>
 
