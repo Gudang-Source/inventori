@@ -18,7 +18,7 @@ if(!empty($info->currency))
         <!-- MAP & BOX PANE -->
         <div class="box">
             <div class="box-header box-header-background with-border">
-                <h3 class="box-title">Sales Report</h3>
+                <h3 class="box-title">Laporan Barang</h3>
 
             </div><!-- /.box-header -->
             <div class="box-body">
@@ -29,7 +29,7 @@ if(!empty($info->currency))
                         </p>
                         <div class="chart-responsive">
                             <!-- Sales Chart Canvas -->
-                            <canvas style="padding: 15px;" width="860" style="width: 860px; height: 190px;" id="salesChart" height="300"></canvas>
+                            <canvas style="padding:15px;" width="860" style="width: 860px; height: 190px;" id="salesChart" height="300"></canvas>
                         </div><!-- /.chart-responsive -->
                     <!-- </div> --><!-- /.col -->
                     <!-- <div class="col-md-2 col-sm-4">
@@ -67,7 +67,7 @@ if(!empty($info->currency))
                     <div class="info-box-content box-color">
                         <span class="info-box-text">TOTAL BARANG</span>
                         <span class="info-box-number"><?php echo $total_product ?></span>
-                        <a href="<?php echo base_url() ?>admin/product/manage_product" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="<?php echo base_url() ?>admin/product/manage_product" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
 
@@ -79,7 +79,7 @@ if(!empty($info->currency))
                 <div class="info-box-content box-color">
                     <span class="info-box-text">TOTAL PERMINTAAN</span>
                     <span class="info-box-number"><?php echo $total_order ?></span>
-                    <a href="<?php echo base_url() ?>admin/order/manage_order" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo base_url() ?>admin/order/manage_order" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
                 </div><!-- /.info-box-content -->
             </div><!-- /.info-box -->
         </div><!-- /.info-box -->
@@ -89,7 +89,7 @@ if(!empty($info->currency))
                 <div class="info-box-content box-color">
                     <span class="info-box-text">TOTAL STRUK</span>
                     <span class="info-box-number"><?php echo $total_invoice ?></span>
-                    <a href="<?php echo base_url() ?>admin/order/manage_invoice" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo base_url() ?>admin/order/manage_invoice" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
                 </div><!-- /.info-box-content -->
             </div><!-- /.info-box -->
         </div><!-- /.info-box -->
@@ -99,7 +99,7 @@ if(!empty($info->currency))
                 <div class="info-box-content box-color">
                     <span class="info-box-text">TOTAL CUSTOMER</span>
                     <span class="info-box-number"><?php echo $total_customer?></span>
-                    <a href="<?php echo base_url() ?>admin/customer/manage_customer" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo base_url() ?>admin/customer/manage_customer" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
                 </div><!-- /.info-box-content -->
             </div><!-- /.info-box -->
         </div><!-- /.info-box -->
@@ -121,9 +121,9 @@ if(!empty($info->currency))
                     <table class="table no-margin">
                         <thead>
                         <tr>
-                            <th>Order ID</th>
-                            <th>Customer</th>
-                            <th>Date</th>
+                            <th>No Pesanan</th>
+                            <th>User</th>
+                            <th>Tanggal</th>
                             <th>Status</th>
                             <!-- <th>Order Total</th> -->
                         </tr>
@@ -139,9 +139,9 @@ if(!empty($info->currency))
                                     <?php if($v_order->order_status == 0){ ?>
                                     <span class="label label-warning">PENDING</span>
                                 <?php }elseif($v_order->order_status == 1){ ?>
-                                    <span class="label label-danger">CANCEL</span>
+                                    <span class="label label-danger">BATAL</span>
                                 <?php }else { ?>
-                                    <span class="label label-info">CONFIRM</span>
+                                    <span class="label label-info">KONFIRMASI</span>
                                 <?php }?>
 
                                 </td>
@@ -159,8 +159,8 @@ if(!empty($info->currency))
                 </div><!-- /.table-responsive -->
             </div><!-- /.box-body -->
             <div class="box-footer clearfix">
-                <a href="<?php echo base_url() ?>admin/order/new_order" class="btn btn-sm bg-navy btn-flat pull-left">Place New Order</a>
-                <a href="<?php echo base_url() ?>admin/order/manage_order" class="btn btn-sm bg-purple btn-flat pull-right">View All Orders</a>
+                <a href="<?php echo base_url() ?>admin/order/new_order" class="btn btn-sm bg-navy btn-flat pull-left">Tambah Pesanan Baru</a>
+                <a href="<?php echo base_url() ?>admin/order/manage_order" class="btn btn-sm bg-purple btn-flat pull-right">Tampilkan Semua Pesanan</a>
             </div><!-- /.box-footer -->
         </div><!-- /.box -->
     </div><!-- /.col -->
@@ -205,7 +205,7 @@ if(!empty($info->currency))
                 </ul>
             </div><!-- /.box-body -->
             <div class="box-footer text-center">
-                <a href="<?php echo base_url() ?>admin/product/manage_product" class="uppercase">View All Products</a>
+                <a href="<?php echo base_url() ?>admin/product/manage_product" class="uppercase">Tampilkan Semua Produk</a>
             </div><!-- /.box-footer -->
         </div><!-- /.box -->
     </div><!-- /.col -->
