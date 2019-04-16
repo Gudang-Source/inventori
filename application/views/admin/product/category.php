@@ -34,7 +34,7 @@
                                 <!-- /.Company Name -->
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Kategori Perbekalan<span class="required">*</span></label>
-                                    <input type="text" required name="category_name" placeholder="Category Name"
+                                    <input type="text" required name="category_name" placeholder="Nama Kategori"
                                            value="<?php
                                            if (!empty($category_info->category_name)) {
                                                echo $category_info->category_name;
@@ -62,9 +62,9 @@
                 <table class="table table-bordered table-striped" id="dataTables-example">
                     <thead>
                     <tr>
-                        <th class="active">SL</th>
-                        <th class="active">Category Name</th>
-                        <th class=" active col-sm-2">Action</th>
+                        <th class="active">No</th>
+                        <th class="active">Nama Kategori</th>
+                        <th class=" active col-sm-2">Aksi</th>
 
                     </tr>
                     </thead>

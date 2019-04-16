@@ -11,7 +11,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Product Sub Category</h3>
+                        <h3 class="box-title ">Sub Kategori Bekal</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -32,9 +32,9 @@
                             <div class="box-body" >
                                 <!-- /.category -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Product Category <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">Kategori Bekal <span class="required">*</span></label>
                                     <select name="category_id" class="form-control col-sm-5" required>
-                                        <option value="">Select Product Category</option>
+                                        <option value="">Pilih Kategori Bekal</option>
                                         <?php if (!empty($all_category)): ?>
                                             <?php foreach ($all_category as $v_categogy) : ?>
                                                 <option value="<?php echo $v_categogy->category_id; ?>"
@@ -55,8 +55,8 @@
 
                                 <!-- /.subcategory -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Product Subcategory <span class="required">*</span></label>
-                                    <input type="text" required name="subcategory_name" placeholder="Subcategory"
+                                    <label for="exampleInputEmail1">Sub Kategori Bekal <span class="required">*</span></label>
+                                    <input type="text" required name="subcategory_name" placeholder="Sub Kategori Bekal"
                                            value="<?php
                                            if (!empty($sub_category_info->subcategory_name)) {
                                                echo $sub_category_info->subcategory_name;
@@ -66,7 +66,7 @@
                                 </div>
                                 <!-- /.subcategory -->
 
-                                <button type="submit" class="btn bg-navy" type="submit">Save Subcategory
+                                <button type="submit" class="btn bg-navy" type="submit">Simpan Sub Kategori
                                 </button><br/><br/>
                             </div>
                             <!-- /.box-body -->
@@ -88,10 +88,10 @@
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead ><!-- Table head -->
                             <tr>
-                                <th class="col-sm-1 active">SL</th>
-                                <th class="active">Category</th>
-                                <th class="active">Sub Category</th>
-                                <th class="col-sm-1 active">Action</th>
+                                <th class="col-sm-1 active">No</th>
+                                <th class="active">Kategori</th>
+                                <th class="active">Sub Kategori</th>
+                                <th class="col-sm-1 active">Aksi</th>
 
                             </tr>
                             </thead><!-- / Table head -->

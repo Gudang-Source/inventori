@@ -13,7 +13,7 @@
 <form method="post" action="<?php echo base_url() ?>admin/product/add_to_print">
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
-                    <h3 class="box-title ">Product Barcode Print</h3>
+                    <h3 class="box-title ">Cetak Barcode Bekal</h3>
                 </div>
                 <div class="box-body">
 
@@ -23,7 +23,7 @@
 
                             <div class="box box-warning">
                                 <div class="box-header box-header-background-light with-border">
-                                    <h3 class="box-title ">Select Product</h3>
+                                    <h3 class="box-title ">Pilih Bekal</h3>
                                 </div>
 
                                 <div class="box-tools">
@@ -31,7 +31,7 @@
                                     <div class="input-group">
 
                     <span class="input-group-btn">
-                      <button type="submit" class="btn btn-primary btn-block">Add to Print</button>
+                      <button type="submit" class="btn btn-primary btn-block">Tambah Cetak Barcode</button>
                     </span>
                                     </div>
 
@@ -55,8 +55,8 @@
                                                 <tr>
 
                                                     <th class="active"><input type="checkbox" class="checkbox-inline" id="parent_present" /></th>
-                                                    <th class="active">Product Code</th>
-                                                    <th class="active">Product Name</th>
+                                                    <th class="active">Kode Bekal</th>
+                                                    <th class="active">Nama Bekal</th>
 
 
                                                 </tr>
@@ -97,14 +97,14 @@
 
                             <div class="box box-info">
                                 <div class="box-header box-header-background-light with-border">
-                                    <h3 class="box-title ">Print Barcode</h3>
+                                    <h3 class="box-title ">Cetak Barcode</h3>
                                     <div class="box-tools pull-right">
                                         <!-- Buttons, labels, and many other things can be placed here! -->
                                         <!-- Here is a label for example -->
                                         <div class="box-tools">
                                             <div class="btn-group" role="group" >
-                                                <a onclick="print_invoice('printableArea')" class="btn btn-default ">Print</a>
-                                                <a href="<?php echo base_url() ?>admin/product/clear_print_tray/" class="btn btn-default ">Clear Print Tray</a>
+                                                <a onclick="print_invoice('printableArea')" class="btn btn-default ">Cetak</a>
+                                                <a href="<?php echo base_url() ?>admin/product/clear_print_tray/" class="btn btn-default ">Kosongkan Daftar Cetakan</a>
                                             </div>
                                         </div>
 
