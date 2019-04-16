@@ -45,7 +45,7 @@
                                 <th class="active">Gambar</th>
                                 <th class="active">Kode Bekal</th>
                                 <th class="active">Nama Bekal</th>
-                                <th class="active">Kategori Barang</th>
+                                <th class="active">Kategori Bekal</th>
                                 <th class="active">Siap Pakai</th>
                                 <th class="active">Status</th>
                                 <th class="active">Aksi</th>
@@ -81,9 +81,9 @@
                                         <?php
                                         if($v_product->status == 0)
                                         { ?>
-                                            <span class="label label-warning"><?php echo 'Inactive' ?></span>
+                                            <span class="label label-warning"><?php echo 'Tidak Aktif' ?></span>
                                         <?php } else { ?>
-                                            <span class="label label-primary"><?php echo 'Active' ?></span>
+                                            <span class="label label-primary"><?php echo 'Aktif' ?></span>
                                         <?php } ?>
 
                                     </td>
