@@ -41,9 +41,9 @@ if(!empty($info->currency))
                                 <th class="active">No  Struk</th>
                                 <th class="active">No Pesanan</th>
                                 <th class="active">Tanggal Struk</th>
-                                <th class="active">Pelanggan</th>
-                                <th class="active">Metode Pembayaran</th>
-                                <th class="active">Total Pemesanan</th>
+                                <th class="active">User</th>
+                                <!-- <th class="active">Metode Pembayaran</th>
+                                <th class="active">Total Pemesanan</th> -->
                                 <th class="active">Aksi</th>
 
                             </tr>
@@ -59,8 +59,8 @@ if(!empty($info->currency))
                                     <td class="vertical-td">ORD-<?php echo $v_invoice->order_no ?></td>
                                     <td class="vertical-td"><?php echo date('Y-m-d', strtotime($v_invoice->invoice_date)) ?></td>
                                     <td class="vertical-td"><?php echo $v_invoice->customer_name ?></td>
-                                    <td class="vertical-td"><?php echo $v_invoice->payment_method ?></td>
-                                    <td class="vertical-td"><?php echo $currency .' '. number_format($v_invoice->grand_total,2)  ?></td>
+                                    <!-- <td class="vertical-td"><?php echo $v_invoice->payment_method ?></td>
+                                    <td class="vertical-td"><?php echo $currency .' '. number_format($v_invoice->grand_total,2)  ?></td> -->
 
                                     <td class="vertical-td">
                                         <?php echo btn_view('admin/order/order_invoice/' . $v_invoice->invoice_no); ?>
