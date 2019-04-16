@@ -34,16 +34,16 @@ if(!empty($info->currency))
                     </div><!-- /.col -->
                     <div class="col-md-2 col-sm-4">
                         <div class="pad box-pane-right bg-green" style="min-height: 280px">
-                            <div class="description-block margin-bottom">
+                            <!-- <div class="description-block margin-bottom">
                                 <div class="sparkbar pad" data-color="#fff"><canvas height="30" width="34" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
                                 <h5 class="description-header"><?php echo $currency .' '. number_format($total->selling_price - $total->buying_price - $discount->discount_amount ,2)  ?></h5>
                                 <span class="description-text">TOTAL PENDAPATAN</span>
-                            </div><!-- /.description-block -->
-                            <div class="description-block margin-bottom">
+                            </div> --><!-- /.description-block -->
+                            <!-- <div class="description-block margin-bottom">
                                 <div class="sparkbar pad" data-color="#fff"><canvas height="30" width="34" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
                                 <h5 class="description-header"><?php echo $currency .' '. number_format($total->buying_price , 2)  ?></h5>
                                 <span class="description-text">TOTAL COST</span>
-                            </div><!-- /.description-block -->
+                            </div> --><!-- /.description-block -->
                             <div class="description-block">
                                 <div class="sparkbar pad" data-color="#fff"><canvas height="30" width="34" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
                                 <h5 class="description-header"><?php //echo $currency .' '. number_format($total->product_tax , 2)  ?></h5>
@@ -125,7 +125,7 @@ if(!empty($info->currency))
                             <th>Customer</th>
                             <th>Date</th>
                             <th>Status</th>
-                            <th>Order Total</th>
+                            <!-- <th>Order Total</th> -->
                         </tr>
                         </thead>
                         <tbody>
@@ -145,7 +145,7 @@ if(!empty($info->currency))
                                 <?php }?>
 
                                 </td>
-                                <td><?php echo $currency .' '. number_format($v_order->grand_total , 2)  ?></td>
+                               <!--  <td><?php echo $currency .' '. number_format($v_order->grand_total , 2)  ?></td> -->
                             </tr>
                         <?php endforeach;
                         else:?>
