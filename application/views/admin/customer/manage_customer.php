@@ -10,7 +10,7 @@
 
             <div class="box box-primary ">
                 <div class="box-header box-header-background with-border">
-                        <h3 class="box-title ">Manage Satkai</h3>
+                        <h3 class="box-title ">Kelola Satkai</h3>
                 </div>
 
 
@@ -26,9 +26,9 @@
                                 <th class="active">NRP</th>
                                 <th class="active">Satkai</th>
                                 <th class="active">Email</th>
-                                <th class="active">Phone</th>
-                                <th class="active">Address</th>
-                                <th class="active">Action</th>
+                                <th class="active">Telepon</th>
+                                <th class="active">Alamat</th>
+                                <th class="active">Aksi</th>
 
                             </tr>
                             </thead><!-- / Table head -->
@@ -59,7 +59,7 @@
                             ?><!--get all sub category if not this empty-->
                             <?php else : ?> <!--get error message if this empty-->
                                 <td colspan="7">
-                                    <strong>There is no record for display</strong>
+                                    <strong>Tidak ada data</strong>
                                 </td><!--/ get error message if this empty-->
                             <?php endif; ?>
                             </tbody><!-- / Table body -->

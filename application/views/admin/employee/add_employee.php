@@ -12,7 +12,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-1">
-                    <h3 class="box-title">Create User</h3>
+                    <h3 class="box-title">Tambah Pengguna</h3>
                         </div>
                 </div>
                 <!-- /.box-header -->
@@ -27,7 +27,7 @@
 
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Name <span class="required">*</span></label>
+                                    <label for="exampleInputEmail1">Nama <span class="required">*</span></label>
                                     <input type="text" placeholder="First" name="name" class="form-control"
                                         value="<?php if(!empty($employee_login_details->name)){
                                             echo $employee_login_details->name;
@@ -60,7 +60,7 @@
                                     <input type="password" placeholder="Password" id="password" name="password" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Confirm Password</label>
+                                    <label for="exampleInputPassword1">Ulangi Password</label>
                                     <input type="password" placeholder="Password" id="confirm_password" name="confirm_password"
                                            class="form-control">
                                 </div>
@@ -69,13 +69,13 @@
 
                                 <?php if(!empty($employee_login_details->user_id)) : ?>
                                 <div class="form-group">
-                                    <input type=button id="change_password" class="btn bg-purple" value='Change Password' onclick="setVisibility();";>
+                                    <input type=button id="change_password" class="btn bg-purple" value='Ubah Password' onclick="setVisibility();";>
 
                                 </div>
                                 <?php endif; ?>
 
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">User Type</label>
+                                    <label for="exampleInputPassword1">Tipe User</label>
                                     <select id="user_type" name="flag" class="form-control"
                                             <?php
                                             if(!empty($employee_login_details->flag)) {
@@ -105,7 +105,7 @@
 
                                 <!-- /.employee Image -->
                                 <div class="form-group">
-                                    <label>Employee Image</label>
+                                    <label>Foto Pengguna</label>
                                 </div>
                                 <div class="form-group">
                                     <!-- hidden  old_path when update  -->
@@ -126,9 +126,9 @@
                                         <div>
                                                     <span class="btn btn-default btn-file">
                                                         <span class="fileinput-new"><input type="file" name="employee_image" /></span>
-                                                        <span class="fileinput-exists">Change</span>
+                                                        <span class="fileinput-exists">Ubah</span>
                                                     </span>
-                                            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Hapus</a>
                                         </div>
                                         <div id="valid_msg" class="required"></div>
                                     </div>
@@ -143,7 +143,7 @@
                         <div class="col-md-5 col-md-offset-1">
                             <div id="roll">
                                 <div class="box-body">
-                                    <h4>User Access Roll:</h4>
+                                    <h4>Roll Akses Pengguna:</h4>
                                     <div class="k-header">
                                         <div class="box-col">
                                             <div id="treeview"></div>
@@ -159,7 +159,7 @@
                     <input type="hidden" name="employee_id" id="employee_id" value="<?php echo $employee_id?>">
 
                     <div class="box-footer ">
-                        <button type="submit" id="sbtn" class="btn btn-primary btn-navy col-md-offset-1 bg-navy">Submit</button>
+                        <button type="submit" id="sbtn" class="btn btn-primary btn-navy col-md-offset-1 bg-navy">Kirim</button>
                     </div>
                 </form>
             </div>
@@ -359,20 +359,20 @@
                 },
                 messages: {
                     user_name: {
-                        required: "Please enter a username",
-                        minlength: "Your username must consist of at least 4 characters"
+                        required: "Masukan Username",
+                        minlength: "Username setidaknya 4 karakter"
                     },
                     password: {
-                        required: "Please provide a password",
-                        minlength: "Your password must be at least 6 characters long"
+                        required: "Dibutuhkan Password",
+                        minlength: "Password Anda setidaknya panjang 6 karakter";
                     },
 
                     email: {
-                        required: "Please enter a valid email address"
+                        required: "Masukan Alamat Email"
                     },
 
                     name: {
-                        required: "Please enter your Name"
+                        required: "Masukkan Nama Anda "
                     }
 
 

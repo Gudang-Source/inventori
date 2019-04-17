@@ -354,7 +354,7 @@ class Order extends Admin_Controller
         $customer_code =$this->input->post('customer_id', true);
         if(empty($customer_code))
         {
-            $data_order['customer_name'] = 'walking Client';
+            $data_order['customer_name'] = 'Satkai Tanpa Nomor';
         }else
         {
             $this->tbl_customer('customer_id');
@@ -460,7 +460,7 @@ class Order extends Admin_Controller
         $this->tbl_order_details('order_details_id');
         $data['order_details']= $this->global_model->get_by(array('order_id'=>$data['invoice_info']->order_id), false);
 
-        $data['title'] = 'Order Invoice';
+        $data['title'] = 'Struk Pemesanan';
         $data['subview'] = $this->load->view('admin/order/order_invoice', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -468,14 +468,14 @@ class Order extends Admin_Controller
     /*** Manage Order ***/
     public function manage_order(){
         $data['order'] = $this->order_model->get_all_order();
-        $data['title'] = 'Manage Order';
+        $data['title'] = 'Kelola Pesanan';
         $data['subview'] = $this->load->view('admin/order/manage_order', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
 
-    /*** Pending Order ***/
+    /*** Pesanan Tertunda ***/
     public function pending_order(){
-        $data['title'] = 'Pending Order';
+        $data['title'] = 'Pesanan Tertunda';
         $data['subview'] = $this->load->view('admin/order/pending_order', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -509,7 +509,7 @@ class Order extends Admin_Controller
 
         //get invoice
         $data['order'] = $this->order_model->get_all_order();
-        $data['title'] = 'View Order';
+        $data['title'] = 'Lihat Pesanan';
         $data['subview'] = $this->load->view('admin/order/order_view', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -526,7 +526,7 @@ class Order extends Admin_Controller
 
         if($data['order_status'] == 2)
         {
-            //confirm order
+            //Konfirmasi Pesanan
             $this->tbl_order('order_id');
             $this->global_model->save($data,$order_id );
 
@@ -545,7 +545,7 @@ class Order extends Admin_Controller
 
         }elseif($data['order_status'] == 1)
         {
-            //cancel order
+            //Batalkan Pesanan
             $this->tbl_order('order_id');
             $this->global_model->save($data,$order_id );
 
@@ -594,7 +594,7 @@ class Order extends Admin_Controller
         //order details
         $this->tbl_order_details('order_details_id');
         $data['order_details']= $this->global_model->get_by(array('order_id'=>$data['invoice_info']->order_id), false);
-        $data['title'] = 'Order Invoice';
+        $data['title'] = 'Struk Pemesanan';
 
         $html = $this->load->view('admin/order/pdf_order_invoice', $data, true);
         $filename = 'INV-'.$id;

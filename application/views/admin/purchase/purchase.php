@@ -33,7 +33,7 @@ if(!empty($info->currency))
 
                             <div class="box box-warning">
                                 <div class="box-header box-header-background-light with-border">
-                                    <h3 class="box-title ">Select Product</h3>
+                                    <h3 class="box-title ">Pilih Bekal</h3>
                                 </div>
 
 
@@ -98,7 +98,7 @@ if(!empty($info->currency))
                                                     ?><!--get all sub category if not this empty-->
                                                 <?php else : ?> <!--get error message if this empty-->
                                                     <td colspan="6">
-                                                        <strong>There is no record for display</strong>
+                                                        <strong>Tidak ada data</strong>
                                                     </td><!--/ get error message if this empty-->
                                                 <?php endif; ?>
 

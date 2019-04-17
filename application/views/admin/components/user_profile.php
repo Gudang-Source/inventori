@@ -100,7 +100,7 @@ if(!empty($info->currency))
                             <span class="label label-warning"><?php echo $pending_order_count ?></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header"><?php echo $pending_order_count ?> Pending Order</li>
+                            <li class="header"><?php echo $pending_order_count ?> Pesanan Tertunda</li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
@@ -123,7 +123,7 @@ if(!empty($info->currency))
 
                                 </ul>
                             </li>
-                            <li class="footer"><a href="<?php echo base_url() ?>admin/order/pending_order">See All Pending Order</a></li>
+                            <li class="footer"><a href="<?php echo base_url() ?>admin/order/pending_order">See All Pesanan Tertunda</a></li>
                         </ul>
                     </li>
 

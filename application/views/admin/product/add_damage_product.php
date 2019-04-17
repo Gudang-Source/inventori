@@ -12,7 +12,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
                     <div class="col-md-offset-3">
-                        <h3 class="box-title ">Add Damage Product</h3>
+                        <h3 class="box-title ">Tambah Bekal Rusak</h3>
                     </div>
                 </div>
                 <!-- /.box-header -->
@@ -30,9 +30,9 @@
 
                                 <!-- /.product -->
                                 <div class="form-group">
-                                    <label>Select Product<span class="required">*</span></label>
+                                    <label>Pilih Bekal<span class="required">*</span></label>
                                     <select id="e2" style="width: 100%;" name="product_id" required>
-                                        <option value="">Select Product</option>
+                                        <option value="">Pilih Bekal</option>
                                         <?php if (!empty($product)): ?>
                                             <?php foreach ($product as $v_product) : ?>
                                                 <option value="<?php echo $v_product->product_id; ?>">
@@ -46,23 +46,23 @@
 
                                 <!-- /.damage qty -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Damage Quantity <span class="required">*</span></label>
-                                    <input type="text" name="qty" placeholder="Damage Qty" class="form-control">
+                                    <label for="exampleInputEmail1">Jumlah Rusak <span class="required">*</span></label>
+                                    <input type="text" name="qty" placeholder="Jml Rusak" class="form-control">
                                 </div>
 
                                 <!-- /.note -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Notes</label>
+                                    <label for="exampleInputEmail1">Catatan</label>
                                     <textarea name="note" class="form-control autogrow"
                                               placeholder="Note"></textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Decrease From Stock</label>
+                                    <label for="exampleInputEmail1">Kurangi dari Stok</label>
                                     <select name="decrease" class="form-control">
-                                        <option value="">Decrease From Stock ?</option>
-                                        <option value="1">Yes</option>
-                                        <option value="0">No</option>
+                                        <option value="">Kurangi dari Stok ?</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
                                     </select>
                                 </div>
 
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn bg-navy col-md-offset-3" type="submit">Add Damage Product
+                        <button type="submit" class="btn bg-navy col-md-offset-3" type="submit">Tambah Bekal Rusak
                         </button>
                     </div>
                 </form>

@@ -99,7 +99,7 @@
 
     <?php else : ?> <!--get error message if this empty-->
         <td colspan="6">
-            <strong>There is no record for display</strong>
+            <strong>Tidak ada data</strong>
         </td><!--/ get error message if this empty-->
     <?php endif; ?>
     </tbody><!-- / Table body -->

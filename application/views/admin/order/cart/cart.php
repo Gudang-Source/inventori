@@ -6,7 +6,7 @@
     <tr>
         <th class="active">No</th>
         <th class="active col-sm-6">Bekal</th>
-        <th class="active ">Quantity</th>
+        <th class="active ">Kuantitas</th>
         <!-- <th class="active ">Harga</th>
         <th class="active">Total</th> -->
         <th class="active">Aksi</th>

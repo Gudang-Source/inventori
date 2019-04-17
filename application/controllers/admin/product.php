@@ -569,13 +569,13 @@ class Product extends Admin_Controller
         $this->load->view('admin/_layout_main', $data);
     }
 
-    /*** Add Damage product ***/
+    /*** Tambah Bekal Rusak ***/
     public function add_damage_product(){
 
         $this->tbl_product('product_id');
         $data['product'] = $this->global_model->get();
 
-        $data['title'] = 'Add Damage Product';
+        $data['title'] = 'Tambah Bekal Rusak';
         $data['subview'] = $this->load->view('admin/product/add_damage_product', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }
@@ -585,7 +585,7 @@ class Product extends Admin_Controller
         $data= $this->product_model->array_from_post(array('product_id','qty','note','decrease'));
 
         if(empty($data['product_id'])){
-            $this->message->custom_error_msg('admin/product/add_damage_product','Please select Product');
+            $this->message->custom_error_msg('admin/product/add_damage_product','Please Pilih Bekal');
         }
 
         $data['date'] = date("j F, Y");
@@ -775,13 +775,13 @@ class Product extends Admin_Controller
 
     }
 
-    /*** Add Damage product ***/
+    /*** Tambah Bekal Rusak ***/
     public function print_barcode(){
 
         $this->tbl_product('product_id');
         $data['product'] = $this->global_model->get();
 
-        $data['title'] = 'Add Damage Product';
+        $data['title'] = 'Tambah Bekal Rusak';
         $data['subview'] = $this->load->view('admin/product/print_barcode', $data, true);
         $this->load->view('admin/_layout_main', $data);
     }

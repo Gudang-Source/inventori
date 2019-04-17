@@ -257,7 +257,7 @@ if(!empty($info->address)){
                                     </table>
 
                                     <?php else: ?>
-                                    <strong>There is no record for display</strong>
+                                    <strong>Tidak ada data</strong>
                                     <?php endif ?>
 
 

@@ -419,7 +419,7 @@ table tfoot tr td:first-child {
     <?php if(!empty($invoice_details)) :?>
 
     <?php else: ?>
-        <strong>There is no record for display</strong>
+        <strong>Tidak ada data</strong>
     <?php endif ?>
 
     <div class="section group" style="background-color: #ccc">

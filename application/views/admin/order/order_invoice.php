@@ -52,17 +52,15 @@ if(!empty($info->address)){
 <!--/ Massage-->
 <div class="box">
     <div class="box-header box-header-background with-border">
-        <h3 class="box-title">Order Invoice</h3>
+        <h3 class="box-title">Struk Pemesanan</h3>
         <div class="box-tools pull-right">
             <!-- Buttons, labels, and many other things can be placed here! -->
             <!-- Here is a label for example -->
             <div class="box-tools">
                 <div class="btn-group" role="group" >
-                    <a onclick="print_invoice('printableArea')" class="btn btn-default ">Print</a>
+                    <a onclick="print_invoice('printableArea')" class="btn btn-default ">Cetak</a>
                     <a href="<?php echo base_url() ?>admin/order/pdf_invoice/<?php echo $invoice_info->invoice_no ?>" class="btn btn-default ">PDF</a>
-                    <a href="<?php echo base_url() ?>admin/order/email_invoice/<?php echo $invoice_info->invoice_no ?>" class="btn btn-default " <?php
-                    echo $order_info->customer_email == '' ? 'disable':''
-                    ?>>Email to Customer</a>
+    
                 </div>
             </div>
 
@@ -96,7 +94,7 @@ if(!empty($info->address)){
                 <main>
                     <div id="details" class="clearfix">
                         <div id="client" style="margin-right: 100px">
-                            <div class="to">CUSTOMER BILLING INFO:</div>
+                            <div class="to">INFO PEMESANAN SATKAI</div>
                             <h2 class="name"><?php echo $order_info->customer_name ?></h2>
                             <div class="address"><?php echo $order_info->customer_address ?></div>
                             <div class="address"><?php echo $order_info->customer_phone ?></div>
@@ -104,7 +102,7 @@ if(!empty($info->address)){
                         </div>
                         <?php if(!empty($order_info->shipping_address)):?>
                         <div id="shipping">
-                            <div class="to">CUSTOMER SHIPPING INFO:</div>
+                            <div class="to">Info Pengiriman:</div>
 
                             <div class="address"><?php
                                 echo  $order_info->shipping_address;
@@ -114,9 +112,9 @@ if(!empty($info->address)){
                         <?php endif ?>
 
                         <div id="invoice">
-                            <h1>INVOICE <?php echo $invoice_info->invoice_no ?></h1>
-                            <div class="date">Date of Invoice: <?php echo date('Y-m-d', strtotime($invoice_info->invoice_date )) ?></div>
-                            <div class="date">Sales Person: <?php echo $order_info->sales_person ?></div>
+                            <h1>Struk <?php echo $invoice_info->invoice_no ?></h1>
+                            <div class="date">Tanggal Struk: <?php echo date('Y-m-d', strtotime($invoice_info->invoice_date )) ?></div>
+                            <div class="date">Dikeluarkan Oleh: <?php echo $order_info->sales_person ?></div>
 
                         </div>
                     </div>
@@ -124,10 +122,10 @@ if(!empty($info->address)){
                         <thead>
                         <tr>
                             <th class="no text-right">#</th>
-                            <th class="desc">DESCRIPTION</th>
-                            <th class="unit text-right">UNIT PRICE</th>
-                            <th class="qty text-right">QUANTITY</th>
-                            <th class="total text-right ">TOTAL</th>
+                            <th class="desc">DESKRIPSI</th>
+                           
+                            <th class="qty text-right">KUANTITAS</th>
+                            
                         </tr>
                         </thead>
                         <tbody>
@@ -136,39 +134,17 @@ if(!empty($info->address)){
                         <tr>
                             <td class="no"><?php echo $counter ?></td>
                             <td class="desc"><h3><?php echo $v_order->product_name ?></h3></td>
-                            <td class="unit"><?php echo number_format($v_order->selling_price, 2); ?></td>
+                            
                             <td class="qty"><?php echo $v_order->product_quantity ?></td>
-                            <td class="total"><?php echo number_format($v_order->sub_total,2) ?></td>
+                           <!--  <td class="total"><?php //echo number_format($v_order->sub_total,2) ?></td> -->
                         </tr>
                             <?php $counter ++?>
                         <?php endforeach; ?>
                         </tbody>
                         <tfoot>
-                        <tr>
-                            <td colspan="2"></td>
-                            <td colspan="2">SUBTOTAL</td>
-                            <td><?php echo number_format($order_info->sub_total,2) ?></td>
-                        </tr>
 
-                        <tr>
-                            <td colspan="2"></td>
-                            <td colspan="2">Tax</td>
-                            <td><?php echo number_format($order_info->total_tax,2) ?></td>
-                        </tr>
 
-                        <?php if($order_info->discount):?>
-                            <tr>
-                                <td colspan="2"></td>
-                                <td colspan="2">Discount Amount</td>
-                                <td><?php echo number_format($order_info->discount_amount,2) ?></td>
-                            </tr>
-                        <?php endif; ?>
-
-                        <tr>
-                            <td colspan="2"></td>
-                            <td colspan="2">GRAND TOTAL</td>
-                            <td><?php echo $currency.' '.number_format($order_info->grand_total,2) ?></td>
-                        </tr>
+ 
                         </tfoot>
                     </table>
 

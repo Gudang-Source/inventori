@@ -18,7 +18,7 @@ if(!empty($info->currency))
         <!-- MAP & BOX PANE -->
         <div class="box">
             <div class="box-header box-header-background with-border">
-                <h3 class="box-title">Laporan Barang</h3>
+                <h3 class="box-title">Laporan Bekal</h3>
 
             </div><!-- /.box-header -->
             <div class="box-body">
@@ -65,7 +65,7 @@ if(!empty($info->currency))
                 <div class="info-box">
                     <span class="info-box-icon bg-aqua"><i class="glyphicon glyphicon-qrcode"></i></span>
                     <div class="info-box-content box-color">
-                        <span class="info-box-text">TOTAL BARANG</span>
+                        <span class="info-box-text">TOTAL Bekal</span>
                         <span class="info-box-number"><?php echo $total_product ?></span>
                         <a href="<?php echo base_url() ?>admin/product/manage_product" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
                     </div><!-- /.info-box-content -->
@@ -97,7 +97,7 @@ if(!empty($info->currency))
             <div class="info-box">
                 <span class="info-box-icon bg-yellow"><i class="glyphicon glyphicon-user"></i></span>
                 <div class="info-box-content box-color">
-                    <span class="info-box-text">TOTAL CUSTOMER</span>
+                    <span class="info-box-text">TOTAL SATKAI</span>
                     <span class="info-box-number"><?php echo $total_customer?></span>
                     <a href="<?php echo base_url() ?>admin/customer/manage_customer" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
                 </div><!-- /.info-box-content -->

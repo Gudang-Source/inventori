@@ -37,7 +37,7 @@ class Settings extends Admin_Controller
     {
         $this->settings_model->_table_name = 'tbl_business_profile';
         $this->settings_model->_primary_key = 'business_profile_id';
-        $data = $this->settings_model->array_from_post(array('company_name', 'email', 'address', 'phone', 'currency'));
+        $data = $this->settings_model->array_from_post(array('company_name', 'email', 'address', 'phone'));
 
         //logo Upload
         if ($_FILES['logo']['name']) { // logo name is exist
@@ -53,7 +53,7 @@ class Settings extends Admin_Controller
         $this->settings_model->save($data, $id); // save
         // redirect with msg
         $type = 'success';
-        $message = 'Business Information Successfully Save!';
+        $message = 'Sukses Tersimpan!';
         set_message($type, $message);
         redirect('admin/settings/business_profile');
     }

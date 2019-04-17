@@ -49,13 +49,13 @@ if(!empty($info->address)){
 
 <div class="box">
     <div class="box-header box-header-background with-border">
-        <h3 class="box-title">View Order</h3>
+        <h3 class="box-title">Lihat Pesanan</h3>
         <div class="box-tools pull-right">
             <!-- Buttons, labels, and many other things can be placed here! -->
             <!-- Here is a label for example -->
             <div class="box-tools">
                 <div class="btn-group" role="group" >
-                    <a onclick="print_invoice('printableArea')" class="btn btn-default ">Print</a>
+                    <a onclick="print_invoice('printableArea')" class="btn btn-default ">Cetak</a>
 
                 </div>
             </div>
@@ -78,7 +78,7 @@ if(!empty($info->address)){
                 <main>
                     <div id="details" class="clearfix">
                         <div id="client" style="margin-right: 100px">
-                            <div class="to">CUSTOMER BILLING INFO:</div>
+                            <div class="to">INFO PEMESANAN SATKAI</div>
                             <h2 class="name"><?php echo $order_info->customer_name ?></h2>
                             <div class="address"><?php echo $order_info->customer_address ?></div>
                             <div class="address"><?php echo $order_info->customer_phone ?></div>
@@ -87,22 +87,22 @@ if(!empty($info->address)){
 
 
                         <div id="invoice">
-                            <h1>ORDER <?php echo $order_info->order_no ?></h1>
-                            <div class="date">Date of Order: <?php echo date('Y-m-d', strtotime($order_info->order_date))  ?></div>
-                            <div class="date">Sales Person: <?php echo $order_info->sales_person ?></div>
+                            <h1>STRUK <?php echo $order_info->order_no ?></h1>
+                            <div class="date">Tanggal Pemesanan: <?php echo date('Y-m-d', strtotime($order_info->order_date))  ?></div>
+                            <div class="date">Dikeluarkan Oleh: <?php echo $order_info->sales_person ?></div>
 
                             <?php if($order_info->order_status == 0){ ?>
                                 <form method="post" action="<?php echo base_url()?>admin/order/order_re_confirmation">
-                                <!-- pending Order-->
+                                <!-- Pesanan Tertunda-->
                                 <div>
                                     <div class="form-group">
-                                        <label class="col-sm-5 control-label">Order Status</label>
+                                        <label class="col-sm-5 control-label">Status Pemesanan</label>
 
                                         <div class="col-sm-7">
                                             <select name="order_status" class="form-control" id="order_confirmation">
-                                                <option value="2" <?php echo $order_info->order_status ==2? 'selected':''?>>Confirm Order</option>
-                                                <option value="1" <?php echo $order_info->order_status ==1? 'selected':''?> >Cancel Order</option>
-                                                <option value="0" <?php echo $order_info->order_status ==0? 'selected':''?>>Pending Order</option>
+                                                <option value="2" <?php echo $order_info->order_status ==2? 'selected':''?>>Konfirmasi Pesanan</option>
+                                                <option value="1" <?php echo $order_info->order_status ==1? 'selected':''?> >Batalkan Pesanan</option>
+                                                <option value="0" <?php echo $order_info->order_status ==0? 'selected':''?>>Pesanan Tertunda</option>
                                             </select>
                                         </div>
                                     </div>
@@ -147,11 +147,11 @@ if(!empty($info->address)){
                                 </form>
 
                             <?php }elseif($order_info->order_status == 1){ ?>
-                                <!-- cancel Order-->
-                                <div class="date">Order Status: <?php echo 'Cancel Order' ?></div>
+                                <!-- Batalkan Pesanan-->
+                                <div class="date">Status Pemesanan: <?php echo 'Batalkan Pesanan' ?></div>
                             <?php }else{ ?>
-                                <!-- confirm Order-->
-                                <div class="date">Order Status: <?php echo 'Confirm Order' ?></div>
+                                <!-- Konfirmasi Pesanan-->
+                                <div class="date">Status Pemesanan: <?php echo 'Konfirmasi Pesanan' ?></div>
                             <?php } ?>
 
                         </div>
@@ -160,10 +160,10 @@ if(!empty($info->address)){
                         <thead>
                         <tr>
                             <th class="no text-right">#</th>
-                            <th class="desc">DESCRIPTION</th>
-                            <th class="unit text-right">UNIT PRICE</th>
-                            <th class="qty text-right">QUANTITY</th>
-                            <th class="total text-right ">TOTAL</th>
+                            <th class="desc">Deskripsi</th>
+                           
+                            <th class="qty text-right">Kuantitas</th>
+                           
                         </tr>
                         </thead>
                         <tbody>
@@ -172,9 +172,9 @@ if(!empty($info->address)){
                         <tr>
                             <td class="no"><?php echo $counter ?></td>
                             <td class="desc"><h3><?php echo $v_order->product_name ?></h3></td>
-                            <td class="unit"><?php echo number_format($v_order->selling_price, 2); ?></td>
+                           
                             <td class="qty"><?php echo $v_order->product_quantity ?></td>
-                            <td class="total"><?php echo number_format($v_order->sub_total,2) ?></td>
+                           
                         </tr>
                             <?php $counter ++?>
                         <?php endforeach; ?>

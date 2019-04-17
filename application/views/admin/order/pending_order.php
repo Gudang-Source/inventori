@@ -20,7 +20,7 @@ if(!empty($info->currency))
 
             <div class="box box-primary ">
                 <div class="box-header box-header-background with-border">
-                        <h3 class="box-title ">Pending Order</h3>
+                        <h3 class="box-title ">Pesanan Tertunda</h3>
                 </div>
 
 
@@ -54,11 +54,11 @@ if(!empty($info->currency))
                                     <td class="vertical-td">
                                         <?php
                                           if($v_order->order_status == 0){
-                                              echo 'Pending Order';
+                                              echo 'Pesanan Tertunda';
                                           }elseif($v_order->order_status == 1){
-                                              echo 'Cancel Order';
+                                              echo 'Batalkan Pesanan';
                                         }else{
-                                            echo 'Confirm Order';
+                                            echo 'Konfirmasi Pesanan';
                                         }
                                         ?>
                                     </td>
@@ -77,7 +77,7 @@ if(!empty($info->currency))
                             ?><!--get all sub category if not this empty-->
                             <?php else : ?> <!--get error message if this empty-->
                                 <td colspan="6">
-                                    <strong>There is no record for display</strong>
+                                    <strong>Tidak ada data</strong>
                                 </td><!--/ get error message if this empty-->
                             <?php endif; ?>
                             </tbody><!-- / Table body -->

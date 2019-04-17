@@ -25,7 +25,7 @@
 
                         <div class="box  box-warning">
                             <div class="box-header box-header-background-light with-border">
-                                <h3 class="box-title ">Pilih Produk</h3>
+                                <h3 class="box-title ">Pilih Bekal</h3>
                             </div>
 
 
@@ -34,7 +34,7 @@
                                 <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
                                     <li class="active"><a href="#product-list" data-toggle="tab">Pemesanan</a>
                                     </li>
-                                    <li><a href="#search-product" data-toggle="tab">Cari Produk</a></li>
+                                    <li><a href="#search-product" data-toggle="tab">Cari Bekal</a></li>
                                 </ul>
 
 
@@ -53,7 +53,7 @@
                                                           <span class="input-group-btn">
                                                             <button type="submit" class="btn bg-blue" type="button">Barcode</button>
                                                           </span>
-                                                        <input type="text" name="barcode" class="form-control" placeholder="Scan Product Barcode">
+                                                        <input type="text" name="barcode" class="form-control" placeholder="Scan Bekal Barcode">
                                                     </div>
 
                                                 </form>
@@ -137,7 +137,7 @@
                                                 ?><!--get all sub category if not this empty-->
                                             <?php else : ?> <!--get error message if this empty-->
                                                 <td colspan="6">
-                                                    <strong>There is no record for display</strong>
+                                                    <strong>Tidak ada data</strong>
                                                 </td><!--/ get error message if this empty-->
                                             <?php endif; ?>
 

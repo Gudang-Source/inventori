@@ -138,7 +138,7 @@
                     ?><!--get all category if not this empty-->
                     <?php else : ?> <!--get error message if this empty-->
                         <td colspan="5">
-                            <strong>There is no record for display</strong>
+                            <strong>Tidak ada data</strong>
                         </td><!--/ get error message if this empty-->
                     <?php
                     endif; ?>

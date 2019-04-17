@@ -117,7 +117,7 @@
                                             <!-- /.Buying Price -->
                                             <div class="form-group">
                                                 <label>Jumlah Bekal </label>
-                                                <input type="text" id="product_quantity" name="product_quantity" placeholder="Jumlah Barang"
+                                                <input type="text" id="product_quantity" name="product_quantity" placeholder="Jumlah Bekal"
                                                        value="<?php
                                                        if (!empty($inventory)) {
                                                            echo $inventory->product_quantity;
@@ -129,7 +129,7 @@
                                             <!-- /.Selling Price -->
                                             <div class="form-group">
                                                 <label>Bekal Rusak </label>
-                                                <input type="text" name="notify_quantity" placeholder="Barang Rusak"
+                                                <input type="text" name="notify_quantity" placeholder="Bekal Rusak"
                                                        value="<?php
                                                        if (!empty($inventory)) {
                                                            echo $inventory->notify_quantity;

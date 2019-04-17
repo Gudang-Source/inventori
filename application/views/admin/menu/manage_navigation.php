@@ -61,7 +61,7 @@
                         ?>
                     <?php else : ?>
                     <td colspan="3">
-                        <strong>There is no Record for display!</strong>
+                        <strong>Tidak ada data!</strong>
                     </td>
                 <?php endif; ?>
                 </tbody>

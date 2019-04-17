@@ -9,7 +9,7 @@
 
             <div class="box box-primary ">
                 <div class="box-header box-header-background with-border">
-                    <h3 class="box-title ">Manage Employee</h3>
+                    <h3 class="box-title ">Kelola Pengguna</h3>
                 </div>
 
 
@@ -19,11 +19,11 @@
                     <table class="table table-bordered table-striped" id="dataTables-example">
                         <thead ><!-- Table head -->
                         <tr>
-                            <th class="col-sm-1 active">SL</th>
-                            <th class="active">Name</th>
+                            <th class="col-sm-1 active">No</th>
+                            <th class="active">Nama</th>
                             <th class="col-sm-1 active">Login</th>
-                            <th class="col-sm-1 active">User Type</th>
-                            <th class="col-sm-2 active">Action</th>
+                            <th class="col-sm-1 active">Tipe User</th>
+                            <th class="col-sm-2 active">Aksi</th>
 
                         </tr>
                         </thead><!-- / Table head -->
@@ -48,7 +48,7 @@
                             ?>
                         <?php else : ?>
                             <td colspan="3">
-                                <strong>There is no data to display</strong>
+                                <strong>Tidak Ada Data</strong>
                             </td>
                         <?php endif; ?>
                         </tbody><!-- / Table body -->

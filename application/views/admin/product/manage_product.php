@@ -69,7 +69,7 @@
                                     <td class="vertical-td"><?php echo $v_product->category_name .' > '. $v_product->subcategory_name?></td>
                                     <td class="vertical-td">
                                         <?php
-                                            if($v_product->jumlah_barang >= $v_product->product_quantity)
+                                            if($v_product->jumlah_Bekal >= $v_product->product_quantity)
                                             { ?>
                                                 <span class="label label-warning"><?php echo $v_product->product_quantity ?></span>
                                         <?php } else { ?>
