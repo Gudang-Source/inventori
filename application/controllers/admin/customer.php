@@ -62,8 +62,7 @@ class Customer extends Admin_Controller
             'satkai',
             'email',
             'phone',
-            'address',
-            'discount'
+            'address'
              ));
 
         $this->tbl_customer('customer_id');
