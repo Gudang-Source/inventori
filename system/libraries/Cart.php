@@ -77,6 +77,8 @@ class CI_Cart {
      * @return	bool
      */
     function insert($items = array()) {
+
+        
         // Was any cart data passed? No? Bah...
         if (!is_array($items) OR count($items) == 0) {
             log_message('error', 'The insert method must be passed an array containing data.');
@@ -92,6 +94,7 @@ class CI_Cart {
         if (isset($items['id'])) {
             if (($rowid = $this->_insert($items))) {
                 $save_cart = TRUE;
+
             }
         } else {
             foreach ($items as $val) {
@@ -108,7 +111,6 @@ class CI_Cart {
             $this->_save_cart();
             return isset($rowid) ? $rowid : TRUE;
         }
-
         return FALSE;
     }
 
@@ -123,6 +125,7 @@ class CI_Cart {
      */
     function _insert($items = array()) {
         // Was any cart data passed? No? Bah...
+        
         if (!is_array($items) OR count($items) == 0) {
             log_message('error', 'The insert method must be passed an array containing data.');
             return FALSE;
@@ -130,48 +133,55 @@ class CI_Cart {
 
         // --------------------------------------------------------------------
         // Does the $items array contain an id, quantity, price, and name?  These are required
-        if (!isset($items['id']) OR ! isset($items['qty']) OR ! isset($items['price']) OR ! isset($items['name'])) {
+        // if (!isset($items['id']) OR ! isset($items['qty']) OR ! isset($items['price']) OR ! isset($items['name'])) {
+        //     log_message('error', 'The cart array must contain a product ID, quantity, price, and name.');
+        //     return FALSE;
+        // }
+
+        if (!isset($items['id']) OR ! isset($items['name'])) {
             log_message('error', 'The cart array must contain a product ID, quantity, price, and name.');
             return FALSE;
         }
 
         // --------------------------------------------------------------------
         // Prep the quantity. It can only be a number.  Duh...
-        $items['qty'] = trim(preg_replace('/([^0-9])/i', '', $items['qty']));
-        // Trim any leading zeros
-        $items['qty'] = trim(preg_replace('/(^[0]+)/i', '', $items['qty']));
+        // $items['qty'] = trim(preg_replace('/([^0-9])/i', '', $items['qty']));
+        // // Trim any leading zeros
+        // $items['qty'] = trim(preg_replace('/(^[0]+)/i', '', $items['qty']));
 
-        // If the quantity is zero or blank there's nothing for us to do
-        if (!is_numeric($items['qty']) OR $items['qty'] == 0) {
-            return FALSE;
-        }
+        // // If the quantity is zero or blank there's nothing for us to do
+        // if (!is_numeric($items['qty']) OR $items['qty'] == 0) {
+        //     return FALSE;
+        // }
 
         // --------------------------------------------------------------------
         // Validate the product ID. It can only be alpha-numeric, dashes, underscores or periods
         // Not totally sure we should impose this rule, but it seems prudent to standardize IDs.
         // Note: These can be employee-specified by setting the $this->product_id_rules variable.
         if (!preg_match("/^[" . $this->product_id_rules . "]+$/i", $items['id'])) {
-            log_message('error', 'Invalid product ID.  The product ID can only contain alpha-numeric characters, dashes, and underscores');
+            log_message('error', 'Invalid product ID.  The product ID can only contain alpha-numeric characters, dashes, and underscores'); 
             return FALSE;
         }
+
 
         // --------------------------------------------------------------------
         // Validate the product name. It can only be alpha-numeric, dashes, underscores, colons or periods.
         // Note: These can be employee-specified by setting the $this->product_name_rules variable.
         if (!preg_match("/^[" . $this->product_name_rules . "]+$/i", $items['name'])) {
-            log_message('error', 'An invalid name was submitted as the product name: ' . $items['name'] . ' The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces');
+            log_message('error', 'An invalid name was submitted as the product name: ' . $items['name'] . ' The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces'); 
             return FALSE;
         }
 
         // --------------------------------------------------------------------
-        // Prep the price.  Remove anything that isn't a number or decimal point.
-        $items['price'] = trim(preg_replace('/([^0-9\.])/i', '', $items['price']));
-        // Trim any leading zeros
-        $items['price'] = trim(preg_replace('/(^[0]+)/i', '', $items['price']));
+        // // Prep the price.  Remove anything that isn't a number or decimal point.
+        // $items['price'] = trim(preg_replace('/([^0-9\.])/i', '', $items['price']));
+        // // Trim any leading zeros
+        // $items['price'] = trim(preg_replace('/(^[0]+)/i', '', $items['price']));
+
 
         // Is the price a valid number?
         if (!is_numeric($items['price'])) {
-            log_message('error', 'An invalid price was submitted for product ID: ' . $items['id']);
+            log_message('error', 'An invalid price was submitted for product ID: ' . $items['id']); 
             return FALSE;
         }
 
@@ -187,7 +197,7 @@ class CI_Cart {
         // Our solution is to convert the options array to a string and MD5 it along with the product ID.
         // This becomes the unique "row ID"
         if (isset($items['options']) AND count($items['options']) > 0) {
-            $rowid = md5($items['id'] . implode('', $items['options']));
+            $rowid = md5($items['id'] . implode('', $items['options'])); 
         } else {
             // No options were submitted so we simply MD5 the product ID.
             // Technically, we don't need to MD5 the ID in this case, but it makes
@@ -198,16 +208,20 @@ class CI_Cart {
         // --------------------------------------------------------------------
         // Now that we have our unique "row ID", we'll add our cart items to the master array
         // let's unset this first, just to make sure our index contains only the data from this submission
+
         unset($this->_cart_contents[$rowid]);
 
         // Create a new index with our new row ID
         $this->_cart_contents[$rowid]['rowid'] = $rowid;
 
+
         // And add the new items to the cart array
         foreach ($items as $key => $val) {
-            $this->_cart_contents[$rowid][$key] = $val;
-        }
+            
 
+           $this->_cart_contents[$rowid][$key] = $val;
+           print_r($this->_cart_contents[$rowid][$key]);
+        }
         // Woot!
         return $rowid;
     }

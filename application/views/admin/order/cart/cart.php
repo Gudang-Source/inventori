@@ -15,8 +15,8 @@
     </thead><!-- / Table head -->
     <tbody><!-- / Table body -->
     <?php $cart = $this->cart->contents() ;
-//    echo '<pre>';
-//    print_r($cart);
+   // echo '<pre>';
+   // print_r($cart);
     ?>
     <?php $counter =1 ; ?>
     <?php if (!empty($cart)): foreach ($cart as $item) : ?>

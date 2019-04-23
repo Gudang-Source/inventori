@@ -123,7 +123,7 @@ if(!empty($info->currency))
 
                                 </ul>
                             </li>
-                            <li class="footer"><a href="<?php echo base_url() ?>admin/order/pending_order">See All Pesanan Tertunda</a></li>
+                            <li class="footer"><a href="<?php echo base_url() ?>admin/order/pending_order">Lihat Pesanan Tertunda</a></li>
                         </ul>
                     </li>
 

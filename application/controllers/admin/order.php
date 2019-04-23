@@ -111,6 +111,7 @@ class Order extends Admin_Controller
                     'tax' => $tax,
                     'price_option' => 'general'
                 );
+                $this->load->library('cart'); 
                 $this->cart->insert($data);
                 $this->session->set_flashdata('cart_msg', 'add');
             }
@@ -388,6 +389,8 @@ class Order extends Admin_Controller
             $data_order_details['product_tax'] = $item['tax'];
             $data_order_details['sub_total'] = $item['subtotal'];
             $data_order_details['price_option'] = $item['price_option'];
+
+
 
             $this->global_model->save($data_order_details);
 
