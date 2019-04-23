@@ -12,7 +12,7 @@
             <div class="box box-primary">
                 <div class="box-header box-header-background with-border">
 
-                        <h3 class="box-title ">Notification Product</h3>
+                        <h3 class="box-title ">Peringatan Bekal</h3>
 
                 </div>
 
@@ -23,11 +23,11 @@
                         <table class="table table-bordered table-striped" id="dataTables-example">
                             <thead ><!-- Table head -->
                             <tr>
-                                <th class="active">Image</th>
-                                <th class="active">Code</th>
-                                <th class="active">Product Name</th>
-                                <th class="active">Stock Available</th>
-                                <th class="active">Action</th>
+                                <th class="active">Gambar</th>
+                                <th class="active">Kode</th>
+                                <th class="active">Bekal</th>
+                                <th class="active">Stok Tersedia</th>
+                                <th class="active">Aksi</th>
 
                             </tr>
                             </thead><!-- / Table head -->

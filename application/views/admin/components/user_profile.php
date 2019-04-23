@@ -53,7 +53,7 @@ if(!empty($info->currency))
                                     echo '0';
                                 }
                                 ?>
-                                Product are running out of stock</li>
+                                Bekal hampir habis</li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
@@ -74,7 +74,7 @@ if(!empty($info->currency))
                                                 </div>
                                                 <h4 style="padding-bottom:6px">
                                                     <?php echo 'Barcode:'.$v_notify_product->product_code  ?>
-                                                    <span class="label label-danger">Qty:<?php echo $v_notify_product->product_quantity  ?></span>
+                                                    <span class="label label-danger"><?php echo $v_notify_product->product_quantity  ?></span>
                                                 </h4>
                                                 <p><?php echo $v_notify_product->product_name  ?></p>
                                             </a>
@@ -85,7 +85,7 @@ if(!empty($info->currency))
 
                                 </ul>
                             </li>
-                            <li class="footer"><a href="<?php echo base_url() ?>admin/product/notification_product">See All Notification</a></li>
+                            <li class="footer"><a href="<?php echo base_url() ?>admin/product/notification_product">Lihat semua notifikasi</a></li>
                         </ul>
                     </li>
 
