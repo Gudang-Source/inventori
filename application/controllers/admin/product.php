@@ -471,7 +471,8 @@ class Product extends Admin_Controller
 
         $this->tbl_inventory('inventory_id');
 
-        $inventory['notify_quantity'] = $this->input->post('notify_quantity', true);
+        // $inventory['notify_quantity'] = $this->input->post('notify_quantity', true);
+        $inventory['notify_quantity'] = 10;
         $inventory['product_quantity'] = $this->input->post('product_quantity', true);
         $inventory['product_id'] = $product_id;
 
