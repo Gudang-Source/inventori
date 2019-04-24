@@ -97,7 +97,7 @@ if(!empty($info->address)){
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn bg-navy" type="submit">Generate Report
+                                    <button type="submit" class="btn bg-navy" type="submit">Cetak Laporan
                                     </button><br/><br/>
                                 </div>
                                 <!-- /.box-body -->
@@ -155,7 +155,7 @@ if(!empty($info->address)){
 
                                 <main class="invoice_report">
 
-                                    <h4>Sales Report from: <strong><?php echo $start_date ?></strong> to <strong><?php echo $end_date ?></strong></h4>
+                                    <h4>Laporan Mulai Tanggal <strong><?php echo $start_date ?></strong> Sampai <strong><?php echo $end_date ?></strong></h4>
                                     <br/>
                                     <br/>
 
@@ -170,21 +170,21 @@ if(!empty($info->address)){
                                     <table>
                                         <thead>
                                         <tr>
-                                            <th class="no text-right">INVOICE <?php echo $invoice_no  ?></th>
-                                            <th class="desc">Invoice Date: <?php echo date('Y-m-d', strtotime($order[$key]->invoice_date)) ?></th>
+                                            <th class="no text-right">No Struk : <?php echo $invoice_no  ?></th>
+                                            <th class="desc">Tanggal Struk : <?php echo date('Y-m-d', strtotime($order[$key]->invoice_date)) ?></th>
                                         </tr>
                                         </thead>
                                     </table>
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <thead>
                                         <tr style="background-color: #ECECEC">
-                                            <th class="no text-right">#</th>
-                                            <th class="desc">Description</th>
-                                            <th class="unit text-right">Buying Price</th>
-                                            <th class="unit text-right">Selling Price</th>
-                                            <th class="qty text-right">Qty</th>
-                                            <th class="qty text-right">Tax</th>
-                                            <th class="total text-right ">TOTAL</th>
+                                            <th class="no text-right">No</th>
+                                            <th class="desc">Bekal</th>
+                                            <!-- <th class="unit text-right">Buying Price</th>
+                                            <th class="unit text-right">Selling Price</th> -->
+                                            <th class="qty text-right">Kuantitas</th>
+                                            <!-- <th class="qty text-right">Tax</th>
+                                            <th class="total text-right ">TOTAL</th> -->
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -193,13 +193,13 @@ if(!empty($info->address)){
                                             <tr>
                                                 <td class="no"><?php echo $k ?></td>
                                                 <td class="desc"><h3><?php echo $v_order->product_name ?></h3></td>
-                                                <td class="unit"><?php echo number_format($v_order->buying_price,2)  ?></td>
-                                                <?php $total_buying_price += $v_order->buying_price; ?>
-                                                <td class="unit"><?php echo number_format($v_order->selling_price,2) ?></td>
+                                                <!-- <td class="unit"><?php echo number_format($v_order->buying_price,2)  ?></td> -->
+                                               <!--  <?php $total_buying_price += $v_order->buying_price; ?> -->
+                                               <!--  <td class="unit"><?php echo number_format($v_order->selling_price,2) ?></td> -->
                                                 <td class="qty"><?php echo $v_order->product_quantity ?></td>
-                                                <td class="qty"><?php echo $v_order->product_tax ?></td>
-                                                <td class="total"><?php echo number_format($v_order->sub_total + $v_order->product_tax,2)  ?></td>
-                                            </tr>
+                                               <!--  <td class="qty"><?php echo $v_order->product_tax ?></td> -->
+                                                <!-- <td class="total"><?php echo number_format($v_order->sub_total + $v_order->product_tax,2)  ?></td>
+                                            </tr> -->
                                         <?php $k++?>
                                         <?php $total_cost += $v_order->buying_price; ?>
 
@@ -214,22 +214,22 @@ if(!empty($info->address)){
 
                                         <?php if($order[$key]->discount_amount !=0): ?>
                                             <tr>
-                                                <td colspan="4"></td>
+                                                <!-- <td colspan="4"></td>
                                                 <td colspan="2">Discount Amount</td>
-                                                <td><?php echo number_format($order[$key]->discount_amount,2) ?></td>
+                                                <td><?php echo number_format($order[$key]->discount_amount,2) ?></td> -->
                                             </tr>
                                         <?php endif; ?>
 
-                                        <tr>
+                                        <!-- <tr>
                                             <td colspan="4"></td>
                                             <td colspan="2">Grand Total</td>
                                             <td><?php echo $currency.' '.number_format($order[$key]->grand_total ,2) ?></td>
-                                        </tr>
-                                        <tr>
+                                        </tr> -->
+                                        <!-- <tr>
                                             <td colspan="4"></td>
                                             <td colspan="2">Profit</td>
                                             <td><?php echo $currency.' '.number_format( $order[$key]->grand_total - $total_buying_price,2) ?></td>
-                                        </tr>
+                                        </tr> -->
                                         </tfoot>
                                         <?php
                                         $total_sell += $order[$key]->grand_total;
@@ -241,7 +241,7 @@ if(!empty($info->address)){
                                 <?php endforeach; endif; ?>
 
                                     <?php if(!empty($invoice_details)) :?>
-                                    <table>
+                                   <!--  <table>
                                         <thead>
                                         <tr style="background-color: #ccc">
                                             <th class="no text-right">Total Cost</th>
@@ -254,7 +254,7 @@ if(!empty($info->address)){
                                         <td class="total"><?php echo $currency.' '.number_format( $total_sell,2) ?></td>
                                         <td class="total"><?php echo $currency.' '.number_format( $total_profit,2) ?></td>
                                         </tbody>
-                                    </table>
+                                    </table> -->
 
                                     <?php else: ?>
                                     <strong>Tidak ada data</strong>
