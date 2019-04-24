@@ -399,7 +399,6 @@ class Order extends Admin_Controller
             $customer_info = $this->global_model->get_by(array('customer_id'=> $customer_code), true);
             $data_order['customer_id']= $customer_info->customer_id;
             $data_order['customer_name']= $customer_info->customer_name;
-            $data_order['nama']= $customer_info->customer_name;
             $data_order['customer_email']= $customer_info->email;
             $data_order['customer_phone']= $customer_info->phone;
             $data_order['customer_address']= $customer_info->address;
