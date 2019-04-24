@@ -188,8 +188,7 @@ if(!empty($info->currency))
                            </div>
                            <div class="product-info">
                                <a href="<?php echo base_url() ?>admin/product/manage_product"
-                                  class="product-title">Barcode:<?php echo $v_product->product_code ?><span
-                                       class="label label-warning pull-right"><?php echo $currency. $v_product->selling_price ?></span></a>
+                                  class="product-title">Barcode:<?php echo $v_product->product_code ?></a>
                         <span class="product-description">
                           <?php echo $v_product->product_name ?>
                         </span>
