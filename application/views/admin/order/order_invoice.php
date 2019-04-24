@@ -95,7 +95,7 @@ if(!empty($info->address)){
                     <div id="details" class="clearfix">
                         <div id="client" style="margin-right: 100px">
                             <div class="to">INFO PEMESANAN SATKAI</div>
-                            <h2 class="name"><?php echo $order_info->customer_name ?></h2>
+                            <h2 class="name"><?php  echo $order_info->customer_name; echo $order_info->nama; ?></h2>
                             <div class="address"><?php echo $order_info->customer_address ?></div>
                             <div class="address"><?php echo $order_info->customer_phone ?></div>
                             <div class="email"><?php echo $order_info->customer_email ?></div>
