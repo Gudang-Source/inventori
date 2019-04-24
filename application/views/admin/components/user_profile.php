@@ -89,43 +89,7 @@ if(!empty($info->currency))
                         </ul>
                     </li>
 
-                    <?php
-                    $pending_order = $_SESSION["pending_order"];
-                    $pending_order_count = count($pending_order);
-                    ?>
 
-                    <li class="dropdown messages-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning"><?php echo $pending_order_count ?></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header"><?php echo $pending_order_count ?> Pesanan Tertunda</li>
-                            <li>
-                                <!-- inner menu: contains the actual data -->
-                                <ul class="menu">
-
-                                    <?php
-                                    foreach($pending_order as $v_pending_order){
-                                        ?>
-
-                                        <li><!-- start message -->
-                                            <a href="<?php echo base_url()?>admin/order/view_order/<?php echo $v_pending_order->order_no ?>">
-                                                <h4 style="padding-bottom:6px">
-                                                    <?php echo $v_pending_order->order_no ?> <small>Order Date:  <?php echo date('Y-m-d', strtotime($v_pending_order->order_date ))?></small>
-                                                </h4>
-                                                <p><?php echo $currency .' '. number_format($v_pending_order->grand_total,2)  ?></p>
-                                            </a>
-                                        </li><!-- end message -->
-
-                                    <?php } ?>
-
-
-                                </ul>
-                            </li>
-                            <li class="footer"><a href="<?php echo base_url() ?>admin/order/pending_order">Lihat Pesanan Tertunda</a></li>
-                        </ul>
-                    </li>
 
                     <li>
                         <a href="<?php echo base_url()?>login/logout" >
