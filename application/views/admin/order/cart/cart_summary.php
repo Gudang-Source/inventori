@@ -68,7 +68,7 @@ if(!empty($info->currency))
                 <div class="row">
                     <div class="col-md-6">
                         
-                                    <select name="customer_id" class="form-control col-sm-5" required>
+                                    <select name="customer_id" class="form-control col-sm-5" >
                                         <option value="">Pilih Satkai dari Sistem</option>
                                         <?php if (!empty($satkai)): ?>
                                         <?php echo $satkai; ?>
