@@ -34,7 +34,7 @@ if(!empty($info->currency))
 
         <div class="col-md-6">
 
-            <form method="post" action="<?php echo base_url(); ?>admin/order/new_order">
+            <!-- <form method="post" action="<?php // echo base_url(); ?>admin/order/new_order">
                 <div class="input-group">
                       <span class="input-group-btn">
                         <button type="submit" class="btn bg-blue" type="button" data-placement="top" data-toggle="tooltip" data-original-title="Cari Nomor Satkai">Cari</button>
@@ -42,37 +42,55 @@ if(!empty($info->currency))
                     <input type="text" name="customer" class="form-control" placeholder="Satkai" >
                     <input type="hidden" name="flag" value="customer">
                 </div>
-            </form>
+            </form> -->
 
         </div>
 
         <div class="col-md-6">
-            <form method="post" action="<?php echo base_url(); ?>admin/order/new_order">
+<!--             <form method="post" action="<?php //echo base_url(); ?>admin/order/new_order">
                 <div class="input-group">
-                    <input type="text" class="form-control" value="<?php echo $this->session->userdata('customer_name'); ?>" placeholder="Satkai Tanpa Nomor">
+                    <input type="text" class="form-control" placeholder="Ketik Satkai" name='customer_name'>
                     <span class="input-group-btn">
                             <button type="submit" class="btn btn-danger" type="button" data-placement="top" data-toggle="tooltip" data-original-title="Hapus Satkai"><i class="glyphicon glyphicon-remove-circle"></i></button>
                     </span>
                 </div>
                 <input type="hidden" name="remove_flag" value="customer">
-            </form>
+            </form> -->
         </div>
     </div>
 </div>
 
 <form method="post" action="<?php echo base_url()?>admin/order/save_order">
 
+
        <!--  <div class="box-background" id="order"> -->
             <!-- <div class="box-body"> -->
                 <div class="row">
+                    <div class="col-md-6">
+                        
+                                    <select name="customer_id" class="form-control col-sm-5" required>
+                                        <option value="">Pilih Satkai dari Sistem</option>
+                                        <?php if (!empty($satkai)): ?>
+                                        <?php echo $satkai; ?>
+                                        <?php endif; ?>
+                                    </select>
+                    </div>
+                    <div class="col-md-6">
+                        
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Ketik Satkai" name='customer_name'>
+                            </div>
+                    </div>
 
                     <div class="col-md-12">
+
 
 
                        <div class="form-group">
                             <!-- <label class="col-sm-5 control-label">Sub Tota</label> -->
 
                             <div class="col-sm-7">
+
                                 <input type="hidden" value="<?php
                                 if(empty($cart)){
                                     echo '0.00';
@@ -245,7 +263,7 @@ if(!empty($info->currency))
 
             <!-- hidden field -->
 
-            <input type="hidden" name="customer_id" value="<?php  echo $this->session->userdata('customer_code') ?>">
+            <!-- <input type="hidden" name="customer_id" value="<?php  //echo $this->session->userdata('customer_code') ?>"> -->
             <input type="hidden" value="<?php echo $this->session->userdata('order_no'); ?>" name="order_no">
             <input type="hidden" value="<?php echo $grand_total; ?>" name="grand_total">
             <input type="hidden" value="<?php echo $total_tax; ?>" name="total_tax">

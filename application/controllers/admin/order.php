@@ -42,6 +42,7 @@ class Order extends Admin_Controller
         $customer = $this->input->post('customer', true);
         $customer_flag = $this->input->post('flag', true);
         $customer_remove_flag = $this->input->post('remove_flag', true);
+        $customer_name = $this->input->post('customer_name', true);
 
         //remove customer
         if(!empty($customer_remove_flag)){
@@ -78,6 +79,25 @@ class Order extends Admin_Controller
             );
             $this->session->set_userdata($order_no);
         }
+
+
+        //$this->tbl_customer('customer_id');
+        $customer_details = $this->order_model->getsatkai();
+        
+
+        if ($customer_details) {
+
+            foreach ($customer_details as $customer) {
+
+                $satkai.="<option value='" . $customer->customer_id. "'>" .$customer->customer_name."</option>";
+                
+            }
+        }
+
+
+
+
+        $data['satkai']  = $satkai;  
 
         // view page
         $data['title'] = 'Add New Order';
@@ -315,7 +335,20 @@ class Order extends Admin_Controller
     }
     /*** cart Summery ***/
     function show_cart_summary(){
-        $this->load->view('admin/order/cart/cart_summary');
+        $this->tbl_customer('customer_id');
+        $customer_details = $this->global_model->get_customer_details($id);
+
+        var_dump($customer_details); exit();
+        
+        if ($customer_details) {
+            foreach ($customer_details as $customer) {
+                $satkai.="<option value='" . $cutomer->customer_id . "'>" . $cutomer->customer_name . "</option>";
+            }
+        }
+
+        $data['satkai']  = $satkai; 
+
+        $this->load->view('admin/order/cart/cart_summary',$satkai);
     }
 
     /*** Delete Cart Item ***/
@@ -337,7 +370,10 @@ class Order extends Admin_Controller
     /*** Save Order ***/
     public function save_order()
     {
-        $data_order = $this->global_model->array_from_post(array('grand_total', 'total_tax', 'discount','note', 'payment_ref', 'discount_amount'));
+        $data_order = $this->global_model->array_from_post(array('grand_total', 'total_tax', 'discount','note', 'payment_ref', 'discount_amount','customer_name'));
+
+       
+        $customer_name = $data_order['customer_name'];
         $order_code = $this->input->post('order_no', true);
 
         $data_order['sub_total']  = $this->cart->total();
@@ -353,13 +389,14 @@ class Order extends Admin_Controller
 
         //customer
         $customer_code =$this->input->post('customer_id', true);
+
         if(empty($customer_code))
         {
-            $data_order['customer_name'] = 'Satkai Tanpa Nomor';
+            $data_order['customer_name'] = $customer_name;
         }else
         {
             $this->tbl_customer('customer_id');
-            $customer_info = $this->global_model->get_by(array('customer_code'=> $customer_code), true);
+            $customer_info = $this->global_model->get_by(array('customer_id'=> $customer_code), true);
             $data_order['customer_id']= $customer_info->customer_id;
             $data_order['customer_name']= $customer_info->customer_name;
             $data_order['customer_email']= $customer_info->email;
@@ -657,6 +694,8 @@ class Order extends Admin_Controller
         }
 
     }
+
+
 
 
 }

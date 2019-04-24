@@ -87,4 +87,18 @@ class Order_Model extends MY_Model
         $result = $query_result->result();
         return $result;
     }
+
+
+
+    public function getsatkai()
+    {
+        
+        $this->db->select('*');
+        $this->db->from('tbl_customer');
+        $query_result = $this->db->get();
+        $result = $query_result->result();
+        return $result;
+    }
 }
+
+
