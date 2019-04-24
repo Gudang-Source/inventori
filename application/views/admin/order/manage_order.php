@@ -41,7 +41,7 @@ if(!empty($info->currency))
                                 <th class="active">No Pesanan</th>
                                 <th class="active">Tanggal Pesanan</th>
                                 <th class="active">Status Pesanan</th>
-                                <th class="active">Total Pesanan</th>
+                                <!-- <th class="active">Total Pesanan</th> -->
                                 <th class="active">Diproses Oleh</th>
                                 <th class="active">Aksi</th>
 
@@ -67,7 +67,7 @@ if(!empty($info->currency))
                                         }
                                         ?>
                                     </td>
-                                    <td class="vertical-td">ORD-<?php echo $v_order->Sales_By ?></td>
+  <!--                                   <td class="vertical-td">ORD-<?php //echo $v_order->Sales_By ?></td> -->
                                     <!-- <td class="vertical-td"><?php //echo $currency .' '. number_format($v_order->grand_total,2)  ?></td> -->
                                     <td class="vertical-td"><?php echo $v_order->sales_person ?></td>
 
