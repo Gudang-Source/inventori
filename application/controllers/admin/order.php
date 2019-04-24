@@ -89,7 +89,7 @@ class Order extends Admin_Controller
 
             foreach ($customer_details as $customer) {
 
-                $satkai.="<option value='" . $customer->customer_id. "'>" .$customer->customer_name."</option>";
+                $satkai.="<option value='" . $customer->customer_id. "'>" .$customer->nama."</option>";
                 
             }
         }
